@@ -1,0 +1,33 @@
+============================================================
+[기능 1 - 감성 분석 (Sentiment Analysis)] 재현성 & 결과
+============================================================
+
+[데이터셋]
+- 출처   : AIHub 감성대화 말뭉치 (감정_대분류 + 사람문장1~3)
+- 라벨링 : 기쁨 -> 긍정(1) / 그 외 감정 -> 부정(0)  (이진 분류)
+- 균형   : 1:1 다운샘플링 (긍정 7,339 / 부정 7,339)
+
+[데이터 분할] (Stratified Split, 80:10:10)
+- Train      : 11,742
+- Validation : 1,468
+- Test       : 1,468
+
+[재현성]
+- Seed : 42  (random / numpy / torch / transformers 모두 고정)
+
+[모델]
+- KcELECTRA (beomi/KcELECTRA-base-v2022)  : 가중치 0.7
+- SVM (TF-IDF, max_features=5000)          : 가중치 0.3
+- 결합 방식 : Soft Voting Ensemble (7:3)
+
+[최종 성능] (Test 1,468개)
+- Accuracy : 0.9693
+- Macro-F1 : 0.9693
+- 부정(0)  : precision 0.9624 / recall 0.9768 / f1 0.9696
+- 긍정(1)  : precision 0.9765 / recall 0.9619 / f1 0.9691
+- Confusion Matrix : confusion_matrix_sentiment_only.png 참고
+
+[적법성 확인]
+- 학습  : Train + Validation 만 사용 (KcELECTRA, SVM, TF-IDF 모두 Train 으로만 fit)
+- 모델선택 : Validation 기준 (load_best_model_at_end=True)
+- 테스트 : 학습 종료 후 Test 로 1회만 측정 (테스트셋 누출 없음)
