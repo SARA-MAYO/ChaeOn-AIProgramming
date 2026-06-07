@@ -1,5 +1,23 @@
 # CHAEON - AI Programming Project
 
+## 🚀 빠른 시작 (이것만 따라 하면 됩니다)
+
+모든 모델은 **본인 구글 드라이브(MyDrive)** 를 통해 자동 연동됩니다.
+파일 이동·이름 변경·경로 수정·수동 복사가 **전혀 없습니다.**
+
+1. **기능 1** — `feature1/sentiment_analysis.ipynb` 를 Colab에서 열고, AIHub 감성대화 데이터 업로드 후 **런타임 → 모두 실행(Run all)**
+   → 학습 결과가 `MyDrive/chaeon_feature1_checkpoint`, `svm_model.pkl`, `vectorizer.pkl` 로 **자동 저장**
+2. **기능 2** — `feature2/aggression_detection.ipynb` 를 Colab에서 열고, AIHub 윤리검증 데이터 업로드 후 **Run all**
+   → 학습 결과가 `MyDrive/chaeon_feature2_model` 로 **자동 저장**
+3. **기능 3** — `feature3/colab_feature3_member1.ipynb` 를 Colab에서 열고 **Run all**
+   → 저장소 자동 clone → 기능1·2 모델을 드라이브에서 **자동 로드** → 원문→기능1→기능2→기능3 → 최종 `sample_report.json` 생성
+
+> - 추가로 필요한 사람 작업: **구글 드라이브 인증 클릭**, 그리고 기능1·2의 **AIHub 원본 데이터 업로드**(라이선스상 자동 다운로드 불가)뿐입니다.
+> - 기능 3은 시작 시 위 4개 파일이 드라이브에 있는지 **자동 검사**하고, 없으면 **어떤 파일이 부족한지 안내 후 종료**합니다. (해당 기능 노트북을 먼저 Run all 하면 됨)
+> - GPU·모델 없이 기능 3 로직만 빠르게 보려면: `cd feature3 && python state_change_analysis.py` (자세한 내용은 [`feature3/README.md`](feature3/README.md))
+
+---
+
 ## 프로젝트 개요
 
 채온(CHAEON)은 팀 프로젝트 채팅 로그를 분석하여
