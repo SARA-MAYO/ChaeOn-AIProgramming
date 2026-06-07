@@ -46,11 +46,20 @@ python state_change_analysis.py
 - 파이썬 내장 라이브러리만 사용하므로 별도 설치가 없어도 동작합니다.
   (`requirements.txt`는 전체 프로젝트 연계 검수용 명세입니다.)
 
-### ② 기능1·2 모델까지 통합 (GPU 필요)
+### ② 기능1·2 모델까지 통합 (GPU 필요) — **Run all만 하면 끝**
 
-`colab_feature3_member1.ipynb`를 코랩에서 실행합니다.
-원문 텍스트 입력(`sample_chat_log_raw.json`)을 기능1·2 모델에 통과시켜 라벨을 생성한 뒤,
-그 결과로 기능3 리포트까지 한 번에 만듭니다. 기능1·2 체크포인트가 드라이브에 있어야 합니다.
+`colab_feature3_member1.ipynb`를 코랩에서 열고 **런타임 → 모두 실행(Run all)** 하면 됩니다.
+파일 이동·업로드·경로 수정이 필요 없습니다.
+
+자동으로 일어나는 일:
+1. **저장소 자동 clone** → `state_change_analysis.py`, `sample_chat_log_raw.json` 확보
+2. **드라이브 자동 마운트 + 필수 파일 검사** — 아래 4개가 `MyDrive`에 있는지 확인
+   (없으면 **부족한 파일을 안내하고 종료**)
+   - `chaeon_feature1_checkpoint/`, `svm_model.pkl`, `vectorizer.pkl` (기능1 Run all 시 생성)
+   - `chaeon_feature2_model/` (기능2 Run all 시 생성)
+3. 기능1·2 모델 **자동 로드** → 원문 → 기능1 추론 → 기능2 추론 → 기능3 분석 → `sample_report.json` 생성
+
+> 전제: 기능1·2 노트북을 먼저 Run all 해두면 위 4개 파일이 드라이브에 자동 저장돼 있습니다.
 
 > `sample_report.json`은 실행하면 다시 생성되는 산출물입니다. 저장소의 파일은 예시 결과입니다.
 

@@ -112,7 +112,25 @@ AIHub 텍스트 윤리 검증 데이터셋 사용
 
 - **Google Colab 기준** (Python 3 런타임)
 - 학습 시 **GPU 런타임 권장** (런타임 → 런타임 유형 변경 → 하드웨어 가속기: GPU)
-- 각 기능 상세 실행법: [`feature1/README.md`](feature1/README.md), [`feature2/README.md`](feature2/README.md) 참고
+
+# 실행 순서 (Run all 3번)
+
+기능 1·2·3 모델은 **모두 본인 구글 드라이브(MyDrive)** 를 통해 자동 연동됩니다.
+파일 이동·이름 변경·경로 수정·수동 복사가 전혀 필요 없습니다. (구글 드라이브 인증 클릭만 하면 됩니다.)
+
+| 순서 | 노트북 | 할 일 | 자동으로 일어나는 것 |
+|---|---|---|---|
+| 1 | `feature1/sentiment_analysis.ipynb` | 데이터 업로드 후 **Run all** | 학습 → 모델을 `MyDrive/chaeon_feature1_checkpoint`, `svm_model.pkl`, `vectorizer.pkl` 로 자동 저장 |
+| 2 | `feature2/aggression_detection.ipynb` | 데이터 업로드 후 **Run all** | 학습 → 모델을 `MyDrive/chaeon_feature2_model` 로 자동 저장 |
+| 3 | `feature3/colab_feature3_member1.ipynb` | **Run all** | 저장소 자동 clone → 기능1·2 모델 Drive에서 자동 로드 → 원문→기능1→기능2→기능3→`sample_report.json` 생성 |
+
+> 기능 3은 첫 셀에서 저장소를 자동 clone하고, 시작 시 기능1·2 모델 4개 파일이 Drive에 있는지 검사합니다.
+> 없으면 **어떤 파일이 부족한지 안내하고 멈춥니다.** (해당 기능 노트북을 먼저 Run all 하면 됨)
+>
+> ⚠️ 단, 기능 1·2의 **AIHub 원본 데이터**는 라이선스(로그인·재배포 제한)상 자동 다운로드가 불가하여,
+> Colab 세션(`/content/`)에 직접 업로드하는 단계만 남습니다. (데이터 배치법: 각 기능 README 2번 항목)
+
+- 각 기능 상세 실행법: [`feature1/README.md`](feature1/README.md), [`feature2/README.md`](feature2/README.md), [`feature3/README.md`](feature3/README.md) 참고
 
 ---
 
