@@ -1,6 +1,6 @@
 [
   {
-    "report_generated_at": "2026-06-06T16:52:33Z",
+    "report_generated_at": "2026-06-07T06:37:45Z",
     "sender_id": "user_A",
     "data_sufficient": true,
     "metrics": {
@@ -30,7 +30,7 @@
     }
   },
   {
-    "report_generated_at": "2026-06-06T16:52:33Z",
+    "report_generated_at": "2026-06-07T06:37:45Z",
     "sender_id": "user_B",
     "data_sufficient": true,
     "metrics": {
@@ -60,7 +60,7 @@
     }
   },
   {
-    "report_generated_at": "2026-06-06T16:52:33Z",
+    "report_generated_at": "2026-06-07T06:37:45Z",
     "sender_id": "user_C",
     "data_sufficient": true,
     "metrics": {
@@ -90,13 +90,15 @@
     }
   },
   {
-    "report_generated_at": "2026-06-06T16:52:33Z",
+    "report_generated_at": "2026-06-07T06:37:45Z",
     "sender_id": "user_D",
     "data_sufficient": false,
     "overall": {
       "warning_count": 0,
       "state": "⚪ 판단 보류 (데이터 부족)",
       "text_interpretation": "오늘 작성한 메시지가 부족하여 평소 대비 변화를 분석하기 어렵습니다. 정확한 상태 거울을 보여드리기 위해 내일은 조금 더 많은 대화를 나눠보세요! (최소 필요 기준: 10건)"
-    }
+    },
+    "today_message_count": 5,
+    "required_message_count": 10
   }
 ]
