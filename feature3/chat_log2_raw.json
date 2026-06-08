@@ -1,0 +1,1808 @@
+[
+  {
+    "message_id": 1,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-12T15:09:00+09:00",
+    "text": "다음주 수요일 : 굴러다니는.샘플 3가지 가져오기"
+  },
+  {
+    "message_id": 2,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-18T12:35:00+09:00",
+    "text": "Knit: 샤워타올"
+  },
+  {
+    "message_id": 3,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-18T12:35:00+09:00",
+    "text": "어떠신지요"
+  },
+  {
+    "message_id": 4,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-18T12:35:00+09:00",
+    "text": "다른 의견도 받습니당"
+  },
+  {
+    "message_id": 5,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-18T12:41:00+09:00",
+    "text": "아"
+  },
+  {
+    "message_id": 6,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-18T12:41:00+09:00",
+    "text": "웅웅"
+  },
+  {
+    "message_id": 7,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-18T12:41:00+09:00",
+    "text": "조ㅗ어요"
+  },
+  {
+    "message_id": 8,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-18T12:41:00+09:00",
+    "text": "좋아요"
+  },
+  {
+    "message_id": 9,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-18T12:41:00+09:00",
+    "text": "방금 샤워하면서 보낼려했는데"
+  },
+  {
+    "message_id": 10,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-18T12:41:00+09:00",
+    "text": "짱짱임"
+  },
+  {
+    "message_id": 11,
+    "sender_id": "User_C",
+    "timestamp": "2025-11-18T12:42:00+09:00",
+    "text": "좋아요~~"
+  },
+  {
+    "message_id": 12,
+    "sender_id": "User_C",
+    "timestamp": "2025-11-18T16:01:00+09:00",
+    "text": "그럼 샤워 샤월하고 붕대 사면 되는거죠?"
+  },
+  {
+    "message_id": 13,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-18T16:02:00+09:00",
+    "text": "네네네"
+  },
+  {
+    "message_id": 14,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-18T16:02:00+09:00",
+    "text": "샤워 샤월 ㅋㅋㅋㅎㅋ"
+  },
+  {
+    "message_id": 15,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-18T16:02:00+09:00",
+    "text": "두개맘 사면 될듯!"
+  },
+  {
+    "message_id": 16,
+    "sender_id": "User_C",
+    "timestamp": "2025-11-18T16:03:00+09:00",
+    "text": "오키~"
+  },
+  {
+    "message_id": 17,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-18T16:03:00+09:00",
+    "text": "마스크는 내가 챙길게"
+  },
+  {
+    "message_id": 18,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-18T16:04:00+09:00",
+    "text": "이거몀 되겠지"
+  },
+  {
+    "message_id": 19,
+    "sender_id": "User_C",
+    "timestamp": "2025-11-18T16:41:00+09:00",
+    "text": "뭐사지.."
+  },
+  {
+    "message_id": 20,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-18T16:41:00+09:00",
+    "text": "파란색..?"
+  },
+  {
+    "message_id": 21,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-18T16:42:00+09:00",
+    "text": "제일 단순해 보이는거"
+  },
+  {
+    "message_id": 22,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-18T16:42:00+09:00",
+    "text": "저거 근데 knit  맞겠지"
+  },
+  {
+    "message_id": 23,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-18T16:55:00+09:00",
+    "text": "gma"
+  },
+  {
+    "message_id": 24,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-18T16:55:00+09:00",
+    "text": "흠"
+  },
+  {
+    "message_id": 25,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-18T16:55:00+09:00",
+    "text": "다른거 할까"
+  },
+  {
+    "message_id": 26,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-18T16:55:00+09:00",
+    "text": "다이소에 니트류"
+  },
+  {
+    "message_id": 27,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-18T16:55:00+09:00",
+    "text": "뭐있나"
+  },
+  {
+    "message_id": 28,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-18T16:56:00+09:00",
+    "text": "장갑..?"
+  },
+  {
+    "message_id": 29,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-18T16:56:00+09:00",
+    "text": "수면양말..?"
+  },
+  {
+    "message_id": 30,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-18T16:59:00+09:00",
+    "text": "오"
+  },
+  {
+    "message_id": 31,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-18T16:59:00+09:00",
+    "text": "수면양말 어때"
+  },
+  {
+    "message_id": 32,
+    "sender_id": "User_C",
+    "timestamp": "2025-11-18T16:59:00+09:00",
+    "text": "어...어캐"
+  },
+  {
+    "message_id": 33,
+    "sender_id": "User_C",
+    "timestamp": "2025-11-18T16:59:00+09:00",
+    "text": "나 지금 왔어..."
+  },
+  {
+    "message_id": 34,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-18T16:59:00+09:00",
+    "text": "집?"
+  },
+  {
+    "message_id": 35,
+    "sender_id": "User_C",
+    "timestamp": "2025-11-18T16:59:00+09:00",
+    "text": "아니"
+  },
+  {
+    "message_id": 36,
+    "sender_id": "User_C",
+    "timestamp": "2025-11-18T16:59:00+09:00",
+    "text": "다이소"
+  },
+  {
+    "message_id": 37,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-18T16:59:00+09:00",
+    "text": "아아"
+  },
+  {
+    "message_id": 38,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-18T17:00:00+09:00",
+    "text": "수면양말 니트 맛겠지"
+  },
+  {
+    "message_id": 39,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-18T17:00:00+09:00",
+    "text": "맞겠지"
+  },
+  {
+    "message_id": 40,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-18T17:01:00+09:00",
+    "text": "수면양말로"
+  },
+  {
+    "message_id": 41,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-18T17:01:00+09:00",
+    "text": "합시다잉"
+  },
+  {
+    "message_id": 42,
+    "sender_id": "User_C",
+    "timestamp": "2025-11-18T21:01:00+09:00",
+    "text": "ㅇㅋㅇㅋ"
+  },
+  {
+    "message_id": 43,
+    "sender_id": "User_C",
+    "timestamp": "2025-11-19T14:58:00+09:00",
+    "text": "7조"
+  },
+  {
+    "message_id": 44,
+    "sender_id": "User_C",
+    "timestamp": "2025-11-19T15:46:00+09:00",
+    "text": "샵검색: #돌림판"
+  },
+  {
+    "message_id": 45,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-22T19:01:00+09:00",
+    "text": "줌 회의 시작할깝쇼?"
+  },
+  {
+    "message_id": 46,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-22T19:02:00+09:00",
+    "text": "넹"
+  },
+  {
+    "message_id": 47,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-22T19:03:00+09:00",
+    "text": "[링크]"
+  },
+  {
+    "message_id": 48,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-22T19:03:00+09:00",
+    "text": "내가 만들게요"
+  },
+  {
+    "message_id": 49,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-22T19:07:00+09:00",
+    "text": "1. “헤어드라이어 바람 저항”"
+  },
+  {
+    "message_id": 50,
+    "sender_id": "User_C",
+    "timestamp": "2025-11-22T19:10:00+09:00",
+    "text": "1. 문 사이에 두고 여는 각도를 통일해서 늘어나는 정도 측정, 2. 시편 위에 물풍선을 올려서 양을 늘려가면서 강도 측정"
+  },
+  {
+    "message_id": 51,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-22T19:20:00+09:00",
+    "text": "1. 창문 이용 SS 곡선 실험"
+  },
+  {
+    "message_id": 52,
+    "sender_id": "User_C",
+    "timestamp": "2025-11-22T19:22:00+09:00",
+    "text": "뚜껑 실험"
+  },
+  {
+    "message_id": 53,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-24T21:32:00+09:00",
+    "text": "근데 우리 물풍선 있나"
+  },
+  {
+    "message_id": 54,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-24T21:32:00+09:00",
+    "text": "물풍선 편이점에서 파나"
+  },
+  {
+    "message_id": 55,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-24T21:46:00+09:00",
+    "text": "단곰에서 팔듯~"
+  },
+  {
+    "message_id": 56,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-24T21:46:00+09:00",
+    "text": "아니 단곰 말고 그 학교 문방구"
+  },
+  {
+    "message_id": 57,
+    "sender_id": "User_C",
+    "timestamp": "2025-11-24T22:09:00+09:00",
+    "text": "우리 풍선 오ㅐ 필요했지?"
+  },
+  {
+    "message_id": 58,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-24T22:09:00+09:00",
+    "text": "언니 실험"
+  },
+  {
+    "message_id": 59,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-24T22:09:00+09:00",
+    "text": "아!"
+  },
+  {
+    "message_id": 60,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-24T22:09:00+09:00",
+    "text": "아하하~"
+  },
+  {
+    "message_id": 61,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-24T22:09:00+09:00",
+    "text": "실수~~~"
+  },
+  {
+    "message_id": 62,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-24T22:09:00+09:00",
+    "text": "잘못 생각해버렸네"
+  },
+  {
+    "message_id": 63,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-24T22:10:00+09:00",
+    "text": "뚜껑 실험이었는데"
+  },
+  {
+    "message_id": 64,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-24T22:10:00+09:00",
+    "text": "제송합니다요"
+  },
+  {
+    "message_id": 65,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-24T23:04:00+09:00",
+    "text": "푸핫"
+  },
+  {
+    "message_id": 66,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-24T23:05:00+09:00",
+    "text": "드라이기는"
+  },
+  {
+    "message_id": 67,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-24T23:05:00+09:00",
+    "text": "어캄묘..?"
+  },
+  {
+    "message_id": 68,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-24T23:05:00+09:00",
+    "text": "아"
+  },
+  {
+    "message_id": 69,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-24T23:05:00+09:00",
+    "text": "가져가??"
+  },
+  {
+    "message_id": 70,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-24T23:05:00+09:00",
+    "text": "근데"
+  },
+  {
+    "message_id": 71,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-24T23:05:00+09:00",
+    "text": "드라이기"
+  },
+  {
+    "message_id": 72,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-24T23:05:00+09:00",
+    "text": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ"
+  },
+  {
+    "message_id": 73,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-24T23:05:00+09:00",
+    "text": "안하는거"
+  },
+  {
+    "message_id": 74,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-24T23:05:00+09:00",
+    "text": "아니였삼?"
+  },
+  {
+    "message_id": 75,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-24T23:05:00+09:00",
+    "text": "하면"
+  },
+  {
+    "message_id": 76,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-24T23:05:00+09:00",
+    "text": "초콜릿"
+  },
+  {
+    "message_id": 77,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-24T23:05:00+09:00",
+    "text": "초코릿"
+  },
+  {
+    "message_id": 78,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-24T23:05:00+09:00",
+    "text": "녹이기"
+  },
+  {
+    "message_id": 79,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-24T23:05:00+09:00",
+    "text": "아"
+  },
+  {
+    "message_id": 80,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-24T23:05:00+09:00",
+    "text": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋ"
+  },
+  {
+    "message_id": 81,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-24T23:05:00+09:00",
+    "text": "드라이기"
+  },
+  {
+    "message_id": 82,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-24T23:05:00+09:00",
+    "text": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ"
+  },
+  {
+    "message_id": 83,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-24T23:05:00+09:00",
+    "text": "너 입김으로"
+  },
+  {
+    "message_id": 84,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-24T23:05:00+09:00",
+    "text": "하든가"
+  },
+  {
+    "message_id": 85,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-24T23:05:00+09:00",
+    "text": "낼 챙겨가 듦?"
+  },
+  {
+    "message_id": 86,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-24T23:05:00+09:00",
+    "text": "드림?"
+  },
+  {
+    "message_id": 87,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-24T23:05:00+09:00",
+    "text": "아님 언니가 본가에서"
+  },
+  {
+    "message_id": 88,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-24T23:05:00+09:00",
+    "text": "챙겨오셈"
+  },
+  {
+    "message_id": 89,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-24T23:05:00+09:00",
+    "text": "~~~~~"
+  },
+  {
+    "message_id": 90,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-24T23:05:00+09:00",
+    "text": "푸핫"
+  },
+  {
+    "message_id": 91,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-24T23:06:00+09:00",
+    "text": "드라이기...부탁티비..........."
+  },
+  {
+    "message_id": 92,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-24T23:06:00+09:00",
+    "text": "낼 머리 말리고 꼭 챙겨야 겠다,,,"
+  },
+  {
+    "message_id": 93,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-24T23:06:00+09:00",
+    "text": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ"
+  },
+  {
+    "message_id": 94,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-24T23:06:00+09:00",
+    "text": "낼 한번더 10시 반에 말해 주셈..."
+  },
+  {
+    "message_id": 95,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-24T23:06:00+09:00",
+    "text": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ"
+  },
+  {
+    "message_id": 96,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-24T23:06:00+09:00",
+    "text": "예약메시지 해놔야지"
+  },
+  {
+    "message_id": 97,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-24T23:07:00+09:00",
+    "text": "오오오 굳굳"
+  },
+  {
+    "message_id": 98,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-24T23:07:00+09:00",
+    "text": "11시에 만나는거 맞지?"
+  },
+  {
+    "message_id": 99,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-24T23:07:00+09:00",
+    "text": "웅"
+  },
+  {
+    "message_id": 100,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-24T23:07:00+09:00",
+    "text": "초콜릿은 있긴 한데 안에 땅콩 카라멜 들어있음"
+  },
+  {
+    "message_id": 101,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-24T23:07:00+09:00",
+    "text": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ"
+  },
+  {
+    "message_id": 102,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-24T23:07:00+09:00",
+    "text": "그건 그냥 맛있는 초콜릿 자랑이잖아"
+  },
+  {
+    "message_id": 103,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-24T23:07:00+09:00",
+    "text": "!!"
+  },
+  {
+    "message_id": 104,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-24T23:07:00+09:00",
+    "text": "써도 되긴 하는데,,,"
+  },
+  {
+    "message_id": 105,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-24T23:08:00+09:00",
+    "text": "안에 아무것도 없는걸로 해야될듯..???"
+  },
+  {
+    "message_id": 106,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-24T23:08:00+09:00",
+    "text": "오케이~~"
+  },
+  {
+    "message_id": 107,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-24T23:10:00+09:00",
+    "text": "가나 초콜릿으로다가"
+  },
+  {
+    "message_id": 108,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-24T23:10:00+09:00",
+    "text": "준비해가겠삼"
+  },
+  {
+    "message_id": 109,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-24T23:11:00+09:00",
+    "text": "오케이~"
+  },
+  {
+    "message_id": 110,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-25T10:30:00+09:00",
+    "text": "드라이기 챙기셈"
+  },
+  {
+    "message_id": 111,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-25T10:30:00+09:00",
+    "text": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ"
+  },
+  {
+    "message_id": 112,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-25T10:30:00+09:00",
+    "text": "예약 에바ㅔ"
+  },
+  {
+    "message_id": 113,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-25T10:42:00+09:00",
+    "text": "ㅋㅋㅋᩚㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 아"
+  },
+  {
+    "message_id": 114,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-25T10:42:00+09:00",
+    "text": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ"
+  },
+  {
+    "message_id": 115,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-25T10:42:00+09:00",
+    "text": "개읏김"
+  },
+  {
+    "message_id": 116,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-25T10:47:00+09:00",
+    "text": "아 미칮"
+  },
+  {
+    "message_id": 117,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-25T10:48:00+09:00",
+    "text": "챙겨놓고 쇼팡백 두고옴..."
+  },
+  {
+    "message_id": 118,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-25T10:49:00+09:00",
+    "text": "아"
+  },
+  {
+    "message_id": 119,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-25T10:49:00+09:00",
+    "text": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ"
+  },
+  {
+    "message_id": 120,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-25T10:49:00+09:00",
+    "text": "아놔"
+  },
+  {
+    "message_id": 121,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-25T10:49:00+09:00",
+    "text": "쩔수없쥐"
+  },
+  {
+    "message_id": 122,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-25T10:49:00+09:00",
+    "text": "다시 가는중..."
+  },
+  {
+    "message_id": 123,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-25T10:49:00+09:00",
+    "text": "시간 가능?!"
+  },
+  {
+    "message_id": 124,
+    "sender_id": "User_C",
+    "timestamp": "2025-11-25T10:58:00+09:00",
+    "text": "정말 죄송한데 지금 바로 나갈께요"
+  },
+  {
+    "message_id": 125,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-25T11:07:00+09:00",
+    "text": "오디심"
+  },
+  {
+    "message_id": 126,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-25T11:07:00+09:00",
+    "text": "실험싳티비"
+  },
+  {
+    "message_id": 127,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-25T12:00:00+09:00",
+    "text": "우리 5층 강의실에사"
+  },
+  {
+    "message_id": 128,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-25T12:00:00+09:00",
+    "text": "문 실험 할게요"
+  },
+  {
+    "message_id": 129,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-25T12:04:00+09:00",
+    "text": "언니 혹시 다 끝나서 올라오면"
+  },
+  {
+    "message_id": 130,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-25T12:05:00+09:00",
+    "text": "올라올때 유븐 시편 하나만 들고와줘 ㅠ"
+  },
+  {
+    "message_id": 131,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-25T12:37:00+09:00",
+    "text": "옷 소재 : 폴리에스테르"
+  },
+  {
+    "message_id": 132,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-25T12:40:00+09:00",
+    "text": "Woven : 면사"
+  },
+  {
+    "message_id": 133,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-25T13:20:00+09:00",
+    "text": "종설 언제 끝나"
+  },
+  {
+    "message_id": 134,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-25T14:12:00+09:00",
+    "text": "오늘 마지막날이라 오래걸린다"
+  },
+  {
+    "message_id": 135,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-25T14:12:00+09:00",
+    "text": "ㅜㅡㅠ"
+  },
+  {
+    "message_id": 136,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-25T14:24:00+09:00",
+    "text": "개찮쇼"
+  },
+  {
+    "message_id": 137,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-25T14:24:00+09:00",
+    "text": "끝나면 알려줘ㅔ"
+  },
+  {
+    "message_id": 138,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-25T14:24:00+09:00",
+    "text": "아직도 한 팀 남음"
+  },
+  {
+    "message_id": 139,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-25T14:25:00+09:00",
+    "text": "헐~~"
+  },
+  {
+    "message_id": 140,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-25T14:25:00+09:00",
+    "text": "나 505?"
+  },
+  {
+    "message_id": 141,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-25T14:25:00+09:00",
+    "text": "에 있어"
+  },
+  {
+    "message_id": 142,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-25T14:25:00+09:00",
+    "text": "그 엘베쪽"
+  },
+  {
+    "message_id": 143,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-25T15:38:00+09:00",
+    "text": "나"
+  },
+  {
+    "message_id": 144,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-25T15:38:00+09:00",
+    "text": "6-7시에 올라갈려고 하는데"
+  },
+  {
+    "message_id": 145,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-25T15:38:00+09:00",
+    "text": "그쯤에 괜찮으면 그때 실험 마무리 할까?"
+  },
+  {
+    "message_id": 146,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-25T15:39:00+09:00",
+    "text": "구래요"
+  },
+  {
+    "message_id": 147,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-25T15:39:00+09:00",
+    "text": "감사합니다~"
+  },
+  {
+    "message_id": 148,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-25T17:57:00+09:00",
+    "text": "혹시 6시 20분 다들 괜찮어?"
+  },
+  {
+    "message_id": 149,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-25T18:03:00+09:00",
+    "text": "얍"
+  },
+  {
+    "message_id": 150,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-25T18:04:00+09:00",
+    "text": "오케이"
+  },
+  {
+    "message_id": 151,
+    "sender_id": "User_C",
+    "timestamp": "2025-11-25T18:10:00+09:00",
+    "text": "6시 20분에 다 올라가는거?"
+  },
+  {
+    "message_id": 152,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-25T18:13:00+09:00",
+    "text": "내가 초콜릿 3개 들고 가겠삼"
+  },
+  {
+    "message_id": 153,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-25T18:17:00+09:00",
+    "text": "오"
+  },
+  {
+    "message_id": 154,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-25T18:17:00+09:00",
+    "text": "3층에서 ? 만나?"
+  },
+  {
+    "message_id": 155,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-25T18:17:00+09:00",
+    "text": "싱험실"
+  },
+  {
+    "message_id": 156,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-25T18:20:00+09:00",
+    "text": "나 실험실 도착띠"
+  },
+  {
+    "message_id": 157,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-26T14:30:00+09:00",
+    "text": "각자 담당한 설계 실험 결과"
+  },
+  {
+    "message_id": 158,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-26T15:32:00+09:00",
+    "text": "난 다 좋습니다~~"
+  },
+  {
+    "message_id": 159,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-26T15:46:00+09:00",
+    "text": "ㅋㅋㅋㅋㅋㅋㅋ"
+  },
+  {
+    "message_id": 160,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-26T15:46:00+09:00",
+    "text": "근데 오늘 교수님이 또 크레이지한 아이디어 언급하셔서"
+  },
+  {
+    "message_id": 161,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-26T15:46:00+09:00",
+    "text": "실험 더 해봐야되나 고민"
+  },
+  {
+    "message_id": 162,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-26T15:49:00+09:00",
+    "text": "아?"
+  },
+  {
+    "message_id": 163,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-26T15:49:00+09:00",
+    "text": "미미칭"
+  },
+  {
+    "message_id": 164,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-26T15:49:00+09:00",
+    "text": "크레이지한 아이디어가 도대체 뭔데;"
+  },
+  {
+    "message_id": 165,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-26T15:49:00+09:00",
+    "text": "ㅋㅋᩚㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ"
+  },
+  {
+    "message_id": 166,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-26T15:49:00+09:00",
+    "text": "아까 실험실 보니까 다른 조도"
+  },
+  {
+    "message_id": 167,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-26T15:49:00+09:00",
+    "text": "드라이기로 물병 뭐 하던데"
+  },
+  {
+    "message_id": 168,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-26T15:49:00+09:00",
+    "text": "쩝"
+  },
+  {
+    "message_id": 169,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-26T15:49:00+09:00",
+    "text": "아~~ 우리거 하은거"
+  },
+  {
+    "message_id": 170,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-26T15:49:00+09:00",
+    "text": "보고 따라했네"
+  },
+  {
+    "message_id": 171,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-26T15:50:00+09:00",
+    "text": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ"
+  },
+  {
+    "message_id": 172,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-26T15:59:00+09:00",
+    "text": "아"
+  },
+  {
+    "message_id": 173,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-26T15:59:00+09:00",
+    "text": "집 가고싶어"
+  },
+  {
+    "message_id": 174,
+    "sender_id": "User_C",
+    "timestamp": "2025-11-26T16:06:00+09:00",
+    "text": "ㅋㅋㅋㅋㅋㅋㅋㅋ"
+  },
+  {
+    "message_id": 175,
+    "sender_id": "User_C",
+    "timestamp": "2025-11-26T16:06:00+09:00",
+    "text": "좋아용"
+  },
+  {
+    "message_id": 176,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-27T17:39:00+09:00",
+    "text": "혹시 우리 직물 무게잰거 사진 있나염"
+  },
+  {
+    "message_id": 177,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-27T17:41:00+09:00",
+    "text": "저는 없어야"
+  },
+  {
+    "message_id": 178,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-30T23:18:00+09:00",
+    "text": "우리 파이썬은 언제 할까여"
+  },
+  {
+    "message_id": 179,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-30T23:18:00+09:00",
+    "text": "저는 낼 수업 끝나고 언제든지 가능입니다"
+  },
+  {
+    "message_id": 180,
+    "sender_id": "User_C",
+    "timestamp": "2025-11-30T23:20:00+09:00",
+    "text": "저도여"
+  },
+  {
+    "message_id": 181,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-30T23:20:00+09:00",
+    "text": "근데 내 실험 정리하고 있었는데,,, 테이프에서 직물이 빠져나온건 s-s곡선 그리기엔 적합하지 않다고 해서"
+  },
+  {
+    "message_id": 182,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-30T23:21:00+09:00",
+    "text": "다시 해도 똑같은 결과 나올거 같아 다른 실험으로 진행하려고"
+  },
+  {
+    "message_id": 183,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-30T23:25:00+09:00",
+    "text": "내일 그러면 수업 끝나구 회의 겸 재실험??"
+  },
+  {
+    "message_id": 184,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-30T23:25:00+09:00",
+    "text": "좋아요"
+  },
+  {
+    "message_id": 185,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-30T23:25:00+09:00",
+    "text": "그 피피티에 필요한 사진들도 다시 찍어야해서"
+  },
+  {
+    "message_id": 186,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-30T23:25:00+09:00",
+    "text": "회의 하면서 필요한 자료들만 하면 될듯!"
+  },
+  {
+    "message_id": 187,
+    "sender_id": "User_A",
+    "timestamp": "2025-11-30T23:26:00+09:00",
+    "text": "우선 낼 수업 전까지 피피티 최대한 해서 한번 공유해볼게요.."
+  },
+  {
+    "message_id": 188,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-30T23:26:00+09:00",
+    "text": "좋아여"
+  },
+  {
+    "message_id": 189,
+    "sender_id": "User_B",
+    "timestamp": "2025-11-30T23:28:00+09:00",
+    "text": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋ"
+  },
+  {
+    "message_id": 190,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-01T00:13:00+09:00",
+    "text": "그럼 낼 수업 끝나고 점심 먹고 모일까?"
+  },
+  {
+    "message_id": 191,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-01T00:13:00+09:00",
+    "text": "아니면 그냥 바로 모여?"
+  },
+  {
+    "message_id": 192,
+    "sender_id": "User_C",
+    "timestamp": "2025-12-01T00:24:00+09:00",
+    "text": "자료정리가 오늘까지 아니었나..? 그렇게 빨리?"
+  },
+  {
+    "message_id": 193,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-01T00:26:00+09:00",
+    "text": "언니가 엄청 빨리 해서 줫어!"
+  },
+  {
+    "message_id": 194,
+    "sender_id": "User_C",
+    "timestamp": "2025-12-01T00:28:00+09:00",
+    "text": "헠.."
+  },
+  {
+    "message_id": 195,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-01T02:33:00+09:00",
+    "text": "우선은 앞 부분만 완성하긴 했는데"
+  },
+  {
+    "message_id": 196,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-01T02:33:00+09:00",
+    "text": "계산 하는게 너무 어려워서,, 맞는지 모르겠어"
+  },
+  {
+    "message_id": 197,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-01T02:33:00+09:00",
+    "text": "맞는지 다들 확인 한번만 부탁해요,,"
+  },
+  {
+    "message_id": 198,
+    "sender_id": "User_C",
+    "timestamp": "2025-12-01T10:36:00+09:00",
+    "text": "32221503"
+  },
+  {
+    "message_id": 199,
+    "sender_id": "User_C",
+    "timestamp": "2025-12-01T10:36:00+09:00",
+    "text": "입니담.."
+  },
+  {
+    "message_id": 200,
+    "sender_id": "User_C",
+    "timestamp": "2025-12-01T10:44:00+09:00",
+    "text": "구조까지 분석해야 했나...?"
+  },
+  {
+    "message_id": 201,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-01T10:44:00+09:00",
+    "text": "근데"
+  },
+  {
+    "message_id": 202,
+    "sender_id": "User_C",
+    "timestamp": "2025-12-01T10:44:00+09:00",
+    "text": "계산은 너가 했어?"
+  },
+  {
+    "message_id": 203,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-01T10:44:00+09:00",
+    "text": "그렇게 까지 해야 하나"
+  },
+  {
+    "message_id": 204,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-01T10:44:00+09:00",
+    "text": "엉 내가 \b했는데"
+  },
+  {
+    "message_id": 205,
+    "sender_id": "User_C",
+    "timestamp": "2025-12-01T10:44:00+09:00",
+    "text": "나는 이 발표 투머치라고 본다"
+  },
+  {
+    "message_id": 206,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-01T10:45:00+09:00",
+    "text": "맞는지 모르겠어"
+  },
+  {
+    "message_id": 207,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-01T10:45:00+09:00",
+    "text": "나도"
+  },
+  {
+    "message_id": 208,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-01T10:45:00+09:00",
+    "text": "뒤에 할것도 많아서"
+  },
+  {
+    "message_id": 209,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-01T10:45:00+09:00",
+    "text": "그냥 어차피 두번쨰 발표니깐"
+  },
+  {
+    "message_id": 210,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-01T10:45:00+09:00",
+    "text": "앞서 발표한 곂치는 내용는 간략히 하겠다 하면 되긴 해"
+  },
+  {
+    "message_id": 211,
+    "sender_id": "User_C",
+    "timestamp": "2025-12-01T10:50:00+09:00",
+    "text": "대본 안만드는 걸로"
+  },
+  {
+    "message_id": 212,
+    "sender_id": "User_C",
+    "timestamp": "2025-12-01T10:58:00+09:00",
+    "text": "그냥 콜라 따라했어도 괜찮았을것 같은.."
+  },
+  {
+    "message_id": 213,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-01T10:58:00+09:00",
+    "text": "아니"
+  },
+  {
+    "message_id": 214,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-01T10:58:00+09:00",
+    "text": "근데 어제 내가 준비한 실험이랑"
+  },
+  {
+    "message_id": 215,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-01T10:58:00+09:00",
+    "text": "같은데"
+  },
+  {
+    "message_id": 216,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-01T10:58:00+09:00",
+    "text": "그냥 진행해도 괜찮을려나"
+  },
+  {
+    "message_id": 217,
+    "sender_id": "User_B",
+    "timestamp": "2025-12-01T10:59:00+09:00",
+    "text": "그냥 콜라로 할까??"
+  },
+  {
+    "message_id": 218,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-01T11:00:00+09:00",
+    "text": "난 상관없으묘,,"
+  },
+  {
+    "message_id": 219,
+    "sender_id": "User_C",
+    "timestamp": "2025-12-01T11:00:00+09:00",
+    "text": "음...기억 하실수도.."
+  },
+  {
+    "message_id": 220,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-01T11:01:00+09:00",
+    "text": "언니 혹시"
+  },
+  {
+    "message_id": 221,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-01T11:01:00+09:00",
+    "text": "병뚜껑 실험"
+  },
+  {
+    "message_id": 222,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-01T11:01:00+09:00",
+    "text": "전 후 사진"
+  },
+  {
+    "message_id": 223,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-01T11:01:00+09:00",
+    "text": "전꺼 있어?"
+  },
+  {
+    "message_id": 224,
+    "sender_id": "User_C",
+    "timestamp": "2025-12-01T11:01:00+09:00",
+    "text": "전은 1cm로 동일해서 딱히 안찍었는데.."
+  },
+  {
+    "message_id": 225,
+    "sender_id": "User_C",
+    "timestamp": "2025-12-01T11:01:00+09:00",
+    "text": "실험하는 영상은 있음"
+  },
+  {
+    "message_id": 226,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-01T11:01:00+09:00",
+    "text": "아 실험하는 영상 공유 해줘"
+  },
+  {
+    "message_id": 227,
+    "sender_id": "User_C",
+    "timestamp": "2025-12-01T11:07:00+09:00",
+    "text": "나 User_B님 자료도 줘라. 발표할때 봐야할 수도"
+  },
+  {
+    "message_id": 228,
+    "sender_id": "User_C",
+    "timestamp": "2025-12-01T11:09:00+09:00",
+    "text": "내 손이 좀 도라에몽 처럼 나왔는데...참고좀.."
+  },
+  {
+    "message_id": 229,
+    "sender_id": "User_C",
+    "timestamp": "2025-12-01T11:10:00+09:00",
+    "text": "마스크"
+  },
+  {
+    "message_id": 230,
+    "sender_id": "User_C",
+    "timestamp": "2025-12-01T11:10:00+09:00",
+    "text": "옷"
+  },
+  {
+    "message_id": 231,
+    "sender_id": "User_C",
+    "timestamp": "2025-12-01T11:27:00+09:00",
+    "text": "아니 이팀도 방사 방법 예상했네;; 주제는 섬유 구조와 특성인데...방사법이 특성인가?"
+  },
+  {
+    "message_id": 232,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-01T11:28:00+09:00",
+    "text": "그건 아닌거 같은데"
+  },
+  {
+    "message_id": 233,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-01T11:28:00+09:00",
+    "text": "흠"
+  },
+  {
+    "message_id": 234,
+    "sender_id": "User_C",
+    "timestamp": "2025-12-01T11:29:00+09:00",
+    "text": "음...아닌듯"
+  },
+  {
+    "message_id": 235,
+    "sender_id": "User_C",
+    "timestamp": "2025-12-01T11:29:00+09:00",
+    "text": "안넣는걸로"
+  },
+  {
+    "message_id": 236,
+    "sender_id": "User_C",
+    "timestamp": "2025-12-01T11:31:00+09:00",
+    "text": "아니면 우리 그냥 2개만할까?"
+  },
+  {
+    "message_id": 237,
+    "sender_id": "User_C",
+    "timestamp": "2025-12-01T11:31:00+09:00",
+    "text": "다른 팀 보니까 다 1개만 했는데?"
+  },
+  {
+    "message_id": 238,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-01T13:35:00+09:00",
+    "text": "520 에서 하고 있음"
+  },
+  {
+    "message_id": 239,
+    "sender_id": "User_B",
+    "timestamp": "2025-12-01T13:47:00+09:00",
+    "text": "오캐잇"
+  },
+  {
+    "message_id": 240,
+    "sender_id": "User_C",
+    "timestamp": "2025-12-01T14:22:00+09:00",
+    "text": "# 기본 평직 구조 그리기"
+  },
+  {
+    "message_id": 241,
+    "sender_id": "User_C",
+    "timestamp": "2025-12-01T14:23:00+09:00",
+    "text": "[Execution complete with exit code 0]"
+  },
+  {
+    "message_id": 242,
+    "sender_id": "User_B",
+    "timestamp": "2025-12-01T15:04:00+09:00",
+    "text": "import numpy as np"
+  },
+  {
+    "message_id": 243,
+    "sender_id": "User_B",
+    "timestamp": "2025-12-01T15:54:00+09:00",
+    "text": "import matplotlib.pyplot as plt"
+  },
+  {
+    "message_id": 244,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-01T16:12:00+09:00",
+    "text": "오늘 밤에 수정 더 해서 보내드릴게용"
+  },
+  {
+    "message_id": 245,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-01T21:13:00+09:00",
+    "text": "이 부분에서 편물(니트) 직접 실 길이 풀어서 재야 좋을거 같아"
+  },
+  {
+    "message_id": 246,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-01T21:14:00+09:00",
+    "text": "낼 직접 분해해서 계산 다시해서 피피티 공유 해드릴게용"
+  },
+  {
+    "message_id": 247,
+    "sender_id": "User_B",
+    "timestamp": "2025-12-01T22:23:00+09:00",
+    "text": "구래구래 같이 분해 ㄱㄱ"
+  },
+  {
+    "message_id": 248,
+    "sender_id": "User_B",
+    "timestamp": "2025-12-01T22:23:00+09:00",
+    "text": "종설 끝나구"
+  },
+  {
+    "message_id": 249,
+    "sender_id": "User_B",
+    "timestamp": "2025-12-01T22:23:00+09:00",
+    "text": "기기"
+  },
+  {
+    "message_id": 250,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-01T22:24:00+09:00",
+    "text": "오카이~"
+  },
+  {
+    "message_id": 251,
+    "sender_id": "User_C",
+    "timestamp": "2025-12-02T15:06:00+09:00",
+    "text": "모임..?"
+  },
+  {
+    "message_id": 252,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-02T16:14:00+09:00",
+    "text": "어제 계산 틀린줄 알고 다시 했는데 원래꺼가 맞더라구,"
+  },
+  {
+    "message_id": 253,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-02T16:14:00+09:00",
+    "text": "아니 근데 이페이지 나만 이렇게 보여ㅕ"
+  },
+  {
+    "message_id": 254,
+    "sender_id": "User_B",
+    "timestamp": "2025-12-02T16:14:00+09:00",
+    "text": "나도 그러케"
+  },
+  {
+    "message_id": 255,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-02T16:14:00+09:00",
+    "text": "어제까지는 멀쩡했는데 왜 갑자기 사진이 저렇게 됐지"
+  },
+  {
+    "message_id": 256,
+    "sender_id": "User_B",
+    "timestamp": "2025-12-02T16:14:00+09:00",
+    "text": "보여"
+  },
+  {
+    "message_id": 257,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-02T16:15:00+09:00",
+    "text": "엥"
+  },
+  {
+    "message_id": 258,
+    "sender_id": "User_B",
+    "timestamp": "2025-12-02T16:15:00+09:00",
+    "text": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ"
+  },
+  {
+    "message_id": 259,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-02T16:15:00+09:00",
+    "text": "아오"
+  },
+  {
+    "message_id": 260,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-02T16:50:00+09:00",
+    "text": "데니어랑 텍스 측정하는거"
+  },
+  {
+    "message_id": 261,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-02T16:51:00+09:00",
+    "text": "실 한가닥의 무게를 재서 계산 한거 같어,,"
+  },
+  {
+    "message_id": 262,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-02T17:08:00+09:00",
+    "text": "뭐 일단은 구했는데 편물의 데니어랑 텍스랑 크게 나오는데,,,"
+  },
+  {
+    "message_id": 263,
+    "sender_id": "User_C",
+    "timestamp": "2025-12-02T17:14:00+09:00",
+    "text": "다른 조는?"
+  },
+  {
+    "message_id": 264,
+    "sender_id": "User_C",
+    "timestamp": "2025-12-02T17:14:00+09:00",
+    "text": "그랬다는 건가?"
+  },
+  {
+    "message_id": 265,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-02T17:20:00+09:00",
+    "text": "아니아니"
+  },
+  {
+    "message_id": 266,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-02T17:20:00+09:00",
+    "text": "구할때 원래"
+  },
+  {
+    "message_id": 267,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-02T17:20:00+09:00",
+    "text": "실 한가닥으로 하는거 같더라고"
+  },
+  {
+    "message_id": 268,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-02T17:20:00+09:00",
+    "text": "아니면 그 직물 전체의 길이를 알아내거나"
+  },
+  {
+    "message_id": 269,
+    "sender_id": "User_B",
+    "timestamp": "2025-12-02T17:31:00+09:00",
+    "text": "어카미"
+  },
+  {
+    "message_id": 270,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-02T17:42:00+09:00",
+    "text": "직물은"
+  },
+  {
+    "message_id": 271,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-02T17:43:00+09:00",
+    "text": "4cm로 경사 위사 수 만큼 곱하면 구할수 있어서 그했는데"
+  },
+  {
+    "message_id": 272,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-02T17:43:00+09:00",
+    "text": "편물은 그 한가닥 길이에 가로 수 만큼 구해서 구해보긴 했는데,, 생각보다 값이 크게 나와서"
+  },
+  {
+    "message_id": 273,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-02T17:43:00+09:00",
+    "text": "편물은 한 가닥의 무게를 재서 구하는게 더 나을거 같더라구"
+  },
+  {
+    "message_id": 274,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-02T17:44:00+09:00",
+    "text": "낼 수업 시작하기 전에 무게 재서 피피티 수정하거나 해야 할듯,,"
+  },
+  {
+    "message_id": 275,
+    "sender_id": "User_C",
+    "timestamp": "2025-12-02T19:32:00+09:00",
+    "text": "오케이.."
+  },
+  {
+    "message_id": 276,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-02T21:22:00+09:00",
+    "text": "그래도 계산 틀리게 하지는 않아서 그대로 해도 상관없긴 한데"
+  },
+  {
+    "message_id": 277,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-02T21:22:00+09:00",
+    "text": "정확하게 하고 싶으면 알려줘"
+  },
+  {
+    "message_id": 278,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-02T21:23:00+09:00",
+    "text": "그럼 낼 좀 일찍가서 편물만 측정해서 수정하면 될거 같아"
+  },
+  {
+    "message_id": 279,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-03T11:37:00+09:00",
+    "text": "최종입니다~"
+  },
+  {
+    "message_id": 280,
+    "sender_id": "User_C",
+    "timestamp": "2025-12-03T13:51:00+09:00",
+    "text": "최최종"
+  },
+  {
+    "message_id": 281,
+    "sender_id": "User_C",
+    "timestamp": "2025-12-03T14:38:00+09:00",
+    "text": "갔어야해.."
+  },
+  {
+    "message_id": 282,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-03T14:38:00+09:00",
+    "text": "근데 2시까지 였더라고,,"
+  },
+  {
+    "message_id": 283,
+    "sender_id": "User_C",
+    "timestamp": "2025-12-03T14:38:00+09:00",
+    "text": "ㄴㄴ.."
+  },
+  {
+    "message_id": 284,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-03T14:38:00+09:00",
+    "text": "에?"
+  },
+  {
+    "message_id": 285,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-03T14:38:00+09:00",
+    "text": "아뉘"
+  },
+  {
+    "message_id": 286,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-03T14:38:00+09:00",
+    "text": "올라가볼걸"
+  },
+  {
+    "message_id": 287,
+    "sender_id": "User_B",
+    "timestamp": "2025-12-03T14:39:00+09:00",
+    "text": "아나!!"
+  },
+  {
+    "message_id": 288,
+    "sender_id": "User_C",
+    "timestamp": "2025-12-03T14:40:00+09:00",
+    "text": "큰일났어.."
+  },
+  {
+    "message_id": 289,
+    "sender_id": "User_C",
+    "timestamp": "2025-12-03T14:40:00+09:00",
+    "text": "심장이 너무 뛰어"
+  },
+  {
+    "message_id": 290,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-03T14:41:00+09:00",
+    "text": "아냐"
+  },
+  {
+    "message_id": 291,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-03T14:41:00+09:00",
+    "text": "천천히"
+  },
+  {
+    "message_id": 292,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-03T14:41:00+09:00",
+    "text": "언니 잘하잖아"
+  },
+  {
+    "message_id": 293,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-03T14:51:00+09:00",
+    "text": "화이팅"
+  },
+  {
+    "message_id": 294,
+    "sender_id": "User_C",
+    "timestamp": "2025-12-03T15:03:00+09:00",
+    "text": "교수님이 너무 지루해보였다...ㅠㅠ"
+  },
+  {
+    "message_id": 295,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-03T15:03:00+09:00",
+    "text": "수고했다잉"
+  },
+  {
+    "message_id": 296,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-03T15:03:00+09:00",
+    "text": "괜찮아~~~"
+  },
+  {
+    "message_id": 297,
+    "sender_id": "User_A",
+    "timestamp": "2025-12-03T15:03:00+09:00",
+    "text": "그래도 우리 완벽스"
+  },
+  {
+    "message_id": 298,
+    "sender_id": "User_B",
+    "timestamp": "2025-12-03T15:03:00+09:00",
+    "text": "완벽스"
+  },
+  {
+    "message_id": 299,
+    "sender_id": "User_C",
+    "timestamp": "2025-12-03T15:03:00+09:00",
+    "text": "이모티콘 다들 고생 많았어~~~"
+  },
+  {
+    "message_id": 300,
+    "sender_id": "User_B",
+    "timestamp": "2025-12-03T15:04:00+09:00",
+    "text": "고생많았오용"
+  },
+  {
+    "message_id": 301,
+    "sender_id": "User_C",
+    "timestamp": "2025-12-03T15:23:00+09:00",
+    "text": "오늘따라 다 크레이지하네"
+  }
+]
