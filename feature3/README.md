@@ -20,19 +20,57 @@
 
 ## 폴더 구성
 
+### 저장소 `feature3/` 폴더
+
 ```
 feature3/
-├─ state_change_analysis.py   # 채팅 로그 → 지표 계산 + 상태 판정 + 날짜별 리포트 생성 (전 과정)
-├─ preprocess_chat_log.py     # 카카오톡 채팅 CSV → 기능1·2 입력 JSON 변환 + 익명화 전처리기
-├─ chat_log1_raw.json         # 실데이터 ① 통합 노트북 기본 입력 (전처리·익명화 완료, 메시지 다수)
-├─ chat_log2_raw.json         # 실데이터 ② cleaned_chat_log2.csv 전처리 결과
-├─ sample_chat_log_raw.json   # 데모용 원문 text 입력 (폴백)
-├─ sample_chat_log.json       # 기능1·2 라벨이 붙은 입력 (기능3 단독 실행용)
-├─ daily_report.json          # 단독 스크립트(①) 산출물 — 날짜별 × 사용자별 상태 리포트
-├─ outputs/                   # 통합 노트북(②) 산출물 — 실행마다 <입력명>_<실행시각>/ 폴더로 분리 저장
-├─ colab_feature3_member1.ipynb  # 기능1·2 모델 → 기능3 통합 시연 노트북
-└─ requirements.txt           # 패키지 명세
+│  # ── 코드 ──
+├─ state_change_analysis.py        # 기능3 엔진: 지표 계산 + 상태 판정 + 리포트·log 생성 (단독 실행 entry)
+├─ colab_feature3_member1.ipynb    # 기능1·2 모델 → 기능3 통합 시연 노트북
+├─ preprocess_chat_log.py          # 카카오톡 CSV → 기능1·2 입력 JSON 변환 + 익명화 전처리기
+├─ integration_check.py            # 기능1·2 ↔ 기능3 연결부 스모크 테스트 (모델 없이 배관 검증)
+│  # ── 입력 데이터 ──
+├─ chat_log1_raw.json              # 실데이터 ① 통합 노트북 기본 입력 (원문, 전처리·익명화 완료)
+├─ chat_log2_raw.json              # 실데이터 ② cleaned_chat_log2.csv 전처리 결과 (원문)
+├─ sample_chat_log_raw.json        # 데모용 원문 text 입력 (폴백)
+├─ sample_chat_log.json            # 기능1·2 라벨이 붙은 입력 (단독 실행용)
+│  # ── 산출물 (실행 시 생성·갱신) ──
+├─ daily_report.json               # 단독 스크립트(①) 산출물 — 날짜별 × 사용자별 상태 리포트
+├─ log.txt                         # 단독 스크립트(①) 실행 로그 (재현성 증빙)
+├─ result.txt                      # 재현성·적법성 기록 (Seed·판정 기준·학습 미사용)
+├─ outputs/                        # 통합 노트북(②) 산출물 — 실행마다 <입력명>_<실행시각>/ 폴더로 분리
+│  # ── 문서 ──
+├─ README.md
+├─ requirements.txt                # 패키지 명세 (pandas / numpy / scikit-learn)
+└─ 기능3_설계결과_보고서.pdf
 ```
+
+### 구글 드라이브(MyDrive) 저장 구조 — 기능1·2·3 연동
+
+각 기능을 Colab에서 **Run all** 하면, 산출물이 **기능별 폴더**로 드라이브에 모입니다.
+기능3는 여기서 기능1·2 모델을 불러옵니다.
+
+```
+MyDrive/
+├─ feature1/                       # 기능1 Run all 산출물
+│  ├─ chaeon_feature1_checkpoint/  #   KcELECTRA 모델 + 토크나이저
+│  ├─ svm_model.pkl                #   SVM 모델
+│  ├─ vectorizer.pkl               #   TF-IDF 벡터라이저
+│  ├─ result.txt                   #   Test 성능(Accuracy·Macro-F1) 자동 생성
+│  └─ log.txt                      #   실행 로그
+├─ feature2/                       # 기능2 Run all 산출물
+│  ├─ chaeon_feature2_model/       #   KoELECTRA 모델 + 토크나이저
+│  ├─ result.txt                   #   Test 성능(3-class + Binary) 자동 생성
+│  └─ log.txt
+└─ feature3_outputs/               # 기능3 Run all 산출물 (실행마다 새 폴더)
+   └─ <입력명>_<실행시각>/          #   예: chat_log1_raw_20260608_153012/
+      ├─ labeled.json              #   기능1·2가 라벨링한 결과
+      ├─ label_review.csv / .txt   #   라벨 검수 (원문 ↔ 감정/공격성)
+      └─ daily_report.json         #   날짜별 × 사용자별 상태 리포트
+```
+
+> 기능3 통합 노트북은 시작 시 `MyDrive/feature1/`·`MyDrive/feature2/` 에 위 모델이 있는지 검사합니다.
+> (없으면 부족한 파일을 안내하고 종료 → 해당 기능 노트북을 먼저 Run all)
 
 ---
 
