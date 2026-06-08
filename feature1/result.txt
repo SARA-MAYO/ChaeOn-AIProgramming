@@ -21,10 +21,10 @@
 - 결합 방식 : Soft Voting Ensemble (7:3)
 
 [최종 성능] (Test 1,468개)
-- Accuracy : 0.9693
-- Macro-F1 : 0.9693
-- 부정(0)  : precision 0.9624 / recall 0.9768 / f1 0.9696
-- 긍정(1)  : precision 0.9765 / recall 0.9619 / f1 0.9691
+- Accuracy : 0.9714
+- Macro-F1 : 0.9714
+- 부정(0)  : precision 0.9651 / recall 0.9782 / f1 0.9716
+- 긍정(1)  : precision 0.9779 / recall 0.9646 / f1 0.9712
 - Confusion Matrix : confusion_matrix_sentiment_only.png 참고
 
 [적법성 확인]

@@ -15,7 +15,7 @@ feature1/
 ├─ sentiment_analysis.ipynb   # 학습 + 평가 전체 코드 (셀 순서대로 실행)
 ├─ result.txt                 # 사용 시드, 데이터 분할, 최종 metric 기록
 ├─ dataset/                   # (참고용 빈 폴더 — 원본은 Colab 세션 /content/ 에 업로드)
-└─ model/                     # 학습된 모델 저장 위치
+└─ model/                     # (참고용 빈 폴더 — 학습 모델은 /content/ 및 MyDrive 에 저장됨)
 ```
 
 > 의존성은 저장소 루트의 `requirements.txt` 하나로 통합되어 있습니다.
@@ -111,8 +111,8 @@ feature1/
 | Seed | 42 (random / numpy / torch / transformers) |
 | Split | Train 11,742 / Validation 1,468 / Test 1,468 (80:10:10, Stratified) |
 | Model | KcELECTRA(0.7) + SVM TF-IDF(0.3) Soft Voting |
-| **Accuracy** | **0.9693** |
-| **Macro-F1** | **0.9693** |
+| **Accuracy** | **0.9714** |
+| **Macro-F1** | **0.9714** |
 
 - 평가 지표: Accuracy, Macro-F1, Confusion Matrix
 - 상세 결과는 [`result.txt`](result.txt) 참고

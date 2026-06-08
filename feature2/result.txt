@@ -20,23 +20,23 @@
 
 [모델]
 - 메인       : KoELECTRA-small (monologg/koelectra-small-v3-discriminator), 3-class
-- 베이스라인 : TF-IDF + 로지스틱 회귀 (비교용, 단순 80/20)
+- 베이스라인 : TF-IDF + 로지스틱 회귀 (비교용, KoELECTRA와 동일한 Stratified 8:1:1 분할)
 
 [최종 성능] (메인 모델 / Test 6,931개)
 - Accuracy : 0.64
 - Macro-F1 : 0.60
 - 비공격(0)  : precision 0.74 / recall 0.88 / f1 0.80
 - 약한공격(1) : precision 0.51 / recall 0.51 / f1 0.51
-- 강한공격(2) : precision 0.61 / recall 0.41 / f1 0.50
+- 강한공격(2) : precision 0.61 / recall 0.41 / f1 0.49
 
 [기능 3 연동용 Binary 지표] (공격 vs 비공격)
-- Accuracy  : 0.8146
-- Precision : 0.8946
-- Recall    : 0.7677
+- Accuracy  : 0.8145
+- Precision : 0.8942
+- Recall    : 0.7680
 - F1-Score  : 0.8263
 
 [참고 - 베이스라인(TF-IDF + 로지스틱 회귀)]
-- Accuracy : 0.5403  (메인 모델이 베이스라인보다 우수)
+- Accuracy : 0.5501  (메인 모델이 베이스라인보다 우수)
 
 [적법성 확인]
 - 학습  : Train + Validation 만 사용

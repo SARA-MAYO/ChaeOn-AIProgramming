@@ -15,7 +15,7 @@ feature2/
 ├─ aggression_detection.ipynb   # 전처리 + 학습 + 평가 전체 코드 (셀 순서대로 실행)
 ├─ result.txt                    # 사용 시드, 데이터 분할, 최종 metric 기록
 ├─ dataset/                      # (참고용 빈 폴더 — 원본은 Colab 세션 /content/ 에 업로드)
-└─ model/                        # 학습된 모델 저장 위치
+└─ model/                        # (참고용 빈 폴더 — 학습 모델은 /content/ 및 MyDrive 에 저장됨)
 ```
 
 > 의존성은 저장소 루트의 `requirements.txt` 하나로 통합되어 있습니다.
@@ -116,7 +116,7 @@ feature2/
 | Model | KoELECTRA-small (3-class) |
 | **Accuracy** | **0.64** |
 | **Macro-F1** | **0.60** |
-| Binary(공격 vs 비공격) | Accuracy 0.8146 / F1 0.8263 |
+| Binary(공격 vs 비공격) | Accuracy 0.8145 / F1 0.8263 |
 
 - 평가 지표: Accuracy, Macro-F1, Confusion Matrix
 - 상세 결과는 [`result.txt`](result.txt) 참고
