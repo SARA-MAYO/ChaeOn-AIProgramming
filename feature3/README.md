@@ -88,7 +88,9 @@ python state_change_analysis.py
 |---|---|
 | `daily_report.json` | 날짜별 × 사용자별 상태 리포트 (`feature3/` 루트에 생성) |
 
-> 기능 3은 별도 학습이 없어 `result.txt`는 만들지 않습니다. (학습이 있는 기능 1·2에는 `result.txt`가 있습니다.)
+> 기능 3은 별도 학습이 없어 `result.txt`에 성능 metric(Accuracy 등)은 없지만,
+> 재현성·적법성 기록용으로 `feature3/log.txt`·`feature3/result.txt`를 둡니다.
+> (Seed=42, 판정 기준 상수, "학습/검증/테스트셋 미사용" 등. 모델 자체 성능은 기능1·2의 `result.txt` 참조.)
 
 ---
 
