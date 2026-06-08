@@ -118,10 +118,14 @@ feature2/
 | **Macro-F1** | **0.60** |
 | Binary(공격 vs 비공격) | Accuracy 0.8145 / F1 0.8263 |
 
+> ⚠️ 위 수치는 best-epoch(validation) 선택 적용 **이전** 기준입니다.
+> 노트북을 다시 Run all 한 뒤 `result.txt`/`log.txt` 와 위 표를 최신 값으로 갱신하세요.
+
 - 평가 지표: Accuracy, Macro-F1, Confusion Matrix
 - 상세 결과는 [`result.txt`](result.txt) 참고
 
 ### 적법성 (테스트셋 누출 방지)
 - 학습: **Train + Validation 만** 사용
+- 모델 선택: **Validation Macro-F1 기준** 가장 좋은 epoch 모델 채택 (`load_best_model_at_end=True`, `metric_for_best_model="f1"`)
 - 테스트: 학습 종료 후 Test 로 **1회만** 측정
 - 베이스라인(TF-IDF + 로지스틱 회귀)도 **KoELECTRA와 동일한 8:1:1 분할**로 평가하여 공정하게 비교합니다. (공식 성능은 KoELECTRA 기준)
