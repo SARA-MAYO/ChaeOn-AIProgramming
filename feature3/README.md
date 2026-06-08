@@ -46,7 +46,7 @@ python state_change_analysis.py
 ```
 
 - 입력: `sample_chat_log.json` (기능1·2 라벨이 붙은 채팅 로그)
-- 출력: `daily_report.json` (날짜별 × 발신자별로 🟢🟡🟠⚪ 판정 + 자연어 해석)
+- 출력: `daily_report.json` (날짜별 × 발신자별 🟢🟡🟠⚪ 판정 + 자연어 해석) · `log.txt` (실행 로그, 재현성 증빙)
 - **이 입력 파일은 라벨이 포함된 채로 저장소에 들어 있어, 기능1·2를 먼저 돌리지 않아도 즉시 실행됩니다.**
   (기능1·2 모델·GPU·드라이브 인증 모두 불필요 — 기능3 로직만 단독 검증하는 경로입니다.)
 - 파이썬 내장 라이브러리만 사용하므로 별도 설치가 없어도 동작합니다.
@@ -89,6 +89,7 @@ python state_change_analysis.py
 | 파일 | 내용 |
 |---|---|
 | `daily_report.json` | 날짜별 × 사용자별 상태 리포트 (`feature3/` 루트에 생성) |
+| `log.txt` | 실행 로그 — 발신자별 판정 + 가드레일 상수 + 적법성 (재현성 증빙, 매 실행 갱신) |
 
 > 기능 3은 별도 학습이 없어 `result.txt`에 성능 metric(Accuracy 등)은 없지만,
 > 재현성·적법성 기록용으로 `feature3/log.txt`·`feature3/result.txt`를 둡니다.

@@ -601,10 +601,69 @@ def run_daily(labeled_messages: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return daily
 
 
+def build_log_text(
+    labeled_messages: list[dict[str, Any]],
+    daily_reports: list[dict[str, Any]],
+) -> str:
+    """단독 실행 로그(log.txt) 본문 생성 — 재현성·적법성 증빙용.
+
+    실행 시각 등 비결정적 값에 의존하지 않으므로, 같은 입력이면 항상 같은 로그가 나온다.
+    """
+    senders = sorted({m["sender_id"] for m in labeled_messages})
+    per_sender = run(labeled_messages, generated_at="(실행 시 자동 기록)")
+
+    lines: list[str] = []
+    lines.append("=" * 60)
+    lines.append("[기능 3 - 상태 변화 분석] 실행 로그 (log.txt)")
+    lines.append("=" * 60)
+    lines.append("- 실행 명령 : python state_change_analysis.py")
+    lines.append(f"- 입력      : sample_chat_log.json (기능 1·2 라벨이 붙은 채팅 {len(labeled_messages)}건, 발신자 {len(senders)}명)")
+    lines.append("- Seed      : 42 (기능3 자체 학습 없음 — 시드는 라벨 검수 미리보기 랜덤 샘플에만 사용)")
+    lines.append("- 데이터셋  : 별도 학습/검증/테스트셋 미사용 (기능 1·2 출력 라벨 + 채팅 로그만 입력)")
+    lines.append("- 기준일    : 입력의 최신 날짜를 '오늘'로 자동 설정 후 직전 7일과 비교")
+    lines.append("")
+    lines.append("-" * 60)
+    lines.append("[표준 출력]")
+    lines.append("-" * 60)
+    lines.append(f"[정상 완료] 'daily_report.json' 생성 완료. (날짜별 리포트 {len(daily_reports)}건)")
+    lines.append("")
+    lines.append("-" * 60)
+    lines.append("[발신자별 최신일 상태 판정]")
+    lines.append("-" * 60)
+    for r in per_sender:
+        overall = r["overall"]
+        lines.append(f"[{r['sender_id']}] {overall['state']}")
+        if r.get("data_sufficient"):
+            m = r["metrics"]
+            lines.append(
+                f"   부정 {m['negative']['baseline_ratio']}%→{m['negative']['today_ratio']}% ({m['negative']['change']:+}%p) · "
+                f"공격 {m['aggressive']['baseline_ratio']}%→{m['aggressive']['today_ratio']}% ({m['aggressive']['change']:+}%p) · "
+                f"참여 {m['participation']['change']:+}%"
+            )
+        lines.append(f"   💬 {overall['text_interpretation']}")
+    lines.append("")
+    lines.append("-" * 60)
+    lines.append("[가드레일 상수]")
+    lines.append("-" * 60)
+    lines.append(f"- MIN_MSG_COUNT={MIN_MSG_COUNT}, MIN_BASELINE_MSG_COUNT={MIN_BASELINE_MSG_COUNT}")
+    lines.append(f"- NEGATIVE_THRESHOLD={NEGATIVE_THRESHOLD}%p, AGGRESSION_THRESHOLD={AGGRESSION_THRESHOLD}%p, PARTICIPATION_THRESHOLD={PARTICIPATION_THRESHOLD}%")
+    lines.append("")
+    lines.append("-" * 60)
+    lines.append("[적법성 확인]")
+    lines.append("-" * 60)
+    lines.append("- 학습/검증/테스트 데이터셋을 사용하지 않음 (룰 기반 집계).")
+    lines.append("- 입력은 기능 1·2 모델의 출력 라벨과 채팅 로그뿐 (테스트셋 누출 해당 없음).")
+    lines.append("- 정답 라벨이 없는 실데이터이므로 Accuracy 등 정량 metric은 산출 대상이 아님.")
+    lines.append("  (모델 자체 성능: 기능1 result.txt / 기능2 test_result.txt 참조)")
+    lines.append("")
+    return "\n".join(lines)
+
+
 def main() -> None:
-    """sample_chat_log.json → daily_report.json (날짜별 단독 실행)."""
+    """sample_chat_log.json → daily_report.json + log.txt (날짜별 단독 실행)."""
     input_file = Path("sample_chat_log.json")
     output_file = Path("daily_report.json")
+    log_file = Path("log.txt")
 
     if not input_file.exists():
         print(f"[Error] '{input_file}' 파일이 없습니다. 입력 채팅 로그를 준비해주세요.")
@@ -617,7 +676,12 @@ def main() -> None:
 
     with output_file.open("w", encoding="utf-8") as f:
         json.dump(reports, f, ensure_ascii=False, indent=2)
+
+    # 재현성 증빙용 실행 로그(log.txt)도 함께 생성 (별도 스크립트 불필요)
+    log_file.write_text(build_log_text(labeled_messages, reports), encoding="utf-8")
+
     print(f"[정상 완료] '{output_file}' 생성 완료. (날짜별 리포트 {len(reports)}건)")
+    print(f"[정상 완료] '{log_file}' 생성 완료. (실행 로그)")
 
 
 if __name__ == "__main__":
