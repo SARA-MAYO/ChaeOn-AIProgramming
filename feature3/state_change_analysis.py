@@ -3,10 +3,10 @@
 기능 3 — 상태 변화 분석
 
 기능 1(감정)·기능 2(공격성) 추론 라벨이 붙은 채팅 로그(sample_chat_log.json)를 입력으로 받아,
-발신자별로 오늘 vs 직전 7일을 비교해 3대 지표(부정·공격성·참여량) 변화를 계산하고,
-종합 상태(🟢🟡🟠⚪)와 자연어 해석 문구를 붙인 리포트(sample_report.json)를 생성한다.
+데이터에 존재하는 모든 날짜를 각각 '오늘'로 두고 직전 7일과 비교해 3대 지표(부정·공격성·참여량)
+변화를 계산하고, 종합 상태(🟢🟡🟠⚪)와 자연어 해석 문구를 붙인 날짜별 리포트(daily_report.json)를 생성한다.
 
-    sample_chat_log.json  ──→  python state_change_analysis.py  ──→  sample_report.json
+    sample_chat_log.json  ──→  python state_change_analysis.py  ──→  daily_report.json
 """
 
 from __future__ import annotations
@@ -498,10 +498,113 @@ def run(
     return reports
 
 
+def analyze_sender_on_date(
+    sender_id: str,
+    user_messages: list[dict[str, Any]],
+    ref_date: date,
+) -> dict[str, Any] | None:
+    """ref_date를 '오늘'로 고정(자동 보정 없음)하고 직전 7일과 비교한 단일 결과.
+
+    그날 메시지가 없는 경우 None을 반환한다(생략 대상).
+    """
+    today_start = datetime.combine(ref_date, datetime.min.time(), tzinfo=KST)
+    today_end = today_start + timedelta(days=1)
+    base_start = today_start - timedelta(days=7)
+
+    today_msgs: list[dict[str, Any]] = []
+    base_msgs: list[dict[str, Any]] = []
+    for m in user_messages:
+        ts = _parse_timestamp(m["timestamp"])
+        if today_start <= ts < today_end:
+            today_msgs.append(m)
+        elif base_start <= ts < today_start:
+            base_msgs.append(m)
+
+    today_count, baseline_count = len(today_msgs), len(base_msgs)
+    if today_count == 0:
+        return None
+    if not is_data_sufficient(today_count, baseline_count):
+        reason = "today_insufficient" if today_count < MIN_MSG_COUNT else "baseline_insufficient"
+        return {
+            "date": ref_date.isoformat(),
+            "sender_id": sender_id,
+            "data_sufficient": False,
+            "today_count": today_count,
+            "baseline_count": baseline_count,
+            "overall": {
+                "state": "⚪ 판단 보류 (데이터 부족)",
+                "text_interpretation": generate_text_interpretation(None, None, False, reason=reason),
+            },
+        }
+
+    today_neg = calculate_negative_ratio(today_msgs)
+    base_neg = calculate_negative_ratio(base_msgs)
+    today_agg = calculate_aggression_ratio(today_msgs)
+    base_agg = calculate_aggression_ratio(base_msgs)
+    participation = calculate_participation_change(today_msgs, base_msgs)
+
+    negative_change = calculate_percentage_point(
+        today_neg["negative_ratio"], base_neg["negative_ratio"]
+    )
+    aggression_change = calculate_percentage_point(
+        today_agg["aggression_ratio"], base_agg["aggression_ratio"]
+    )
+    participation_change = participation["participation_change"] or 0.0
+
+    states = classify_metric_states(negative_change, aggression_change, participation_change)
+    overall = classify_overall_state(negative_change, aggression_change, participation_change)
+    metrics = {
+        "negative": {
+            "baseline_ratio": base_neg["negative_ratio"],
+            "today_ratio": today_neg["negative_ratio"],
+            "change": negative_change,
+            "state": states["negative"],
+        },
+        "aggressive": {
+            "baseline_ratio": base_agg["aggression_ratio"],
+            "today_ratio": today_agg["aggression_ratio"],
+            "change": aggression_change,
+            "state": states["aggressive"],
+        },
+        "participation": {
+            "baseline_average": participation["baseline_daily_average"],
+            "today_count": participation["today_count"],
+            "change": participation["participation_change"],
+            "state": states["participation"],
+        },
+    }
+    return {
+        "date": ref_date.isoformat(),
+        "sender_id": sender_id,
+        "data_sufficient": True,
+        "today_count": today_count,
+        "baseline_count": baseline_count,
+        "metrics": metrics,
+        "overall": {**overall, "text_interpretation": generate_text_interpretation(metrics, overall, True)},
+    }
+
+
+def run_daily(labeled_messages: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """라벨된 메시지 → 날짜별 × 발신자별 리포트 리스트.
+
+    데이터에 존재하는 모든 날짜를 각각 '오늘'로 두고 직전 7일과 비교한다.
+    그날 메시지가 없는 (발신자, 날짜) 조합은 생략한다.
+    """
+    grouped = group_messages_by_sender(labeled_messages)
+    all_dates = sorted({_parse_timestamp(m["timestamp"]).date() for m in labeled_messages})
+    daily: list[dict[str, Any]] = []
+    for ref_date in all_dates:
+        for sender_id in sorted(grouped):
+            result = analyze_sender_on_date(sender_id, grouped[sender_id], ref_date)
+            if result is not None:
+                daily.append(result)
+    return daily
+
+
 def main() -> None:
-    """sample_chat_log.json → sample_report.json (단일 실행)."""
+    """sample_chat_log.json → daily_report.json (날짜별 단독 실행)."""
     input_file = Path("sample_chat_log.json")
-    output_file = Path("sample_report.json")
+    output_file = Path("daily_report.json")
 
     if not input_file.exists():
         print(f"[Error] '{input_file}' 파일이 없습니다. 입력 채팅 로그를 준비해주세요.")
@@ -510,11 +613,11 @@ def main() -> None:
     with input_file.open("r", encoding="utf-8") as f:
         labeled_messages = json.load(f)
 
-    reports = run(labeled_messages)
+    reports = run_daily(labeled_messages)
 
     with output_file.open("w", encoding="utf-8") as f:
         json.dump(reports, f, ensure_ascii=False, indent=2)
-    print(f"[정상 완료] '{output_file}' 생성 완료. (리포트 {len(reports)}건)")
+    print(f"[정상 완료] '{output_file}' 생성 완료. (날짜별 리포트 {len(reports)}건)")
 
 
 if __name__ == "__main__":

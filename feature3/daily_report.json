@@ -1,8 +1,43 @@
 [
   {
-    "report_generated_at": "2026-06-07T06:37:45Z",
+    "date": "2026-06-03",
+    "sender_id": "user_A",
+    "data_sufficient": false,
+    "today_count": 10,
+    "baseline_count": 0,
+    "overall": {
+      "state": "⚪ 판단 보류 (데이터 부족)",
+      "text_interpretation": "비교 대상인 과거 7일간의 대화 데이터가 부족하여 신뢰할 수 있는 기저선을 수립할 수 없습니다. 정확한 분석을 위해 팀 활동을 조금 더 지속해 주세요! (최소 필요 기준: 10건)"
+    }
+  },
+  {
+    "date": "2026-06-03",
+    "sender_id": "user_B",
+    "data_sufficient": false,
+    "today_count": 10,
+    "baseline_count": 0,
+    "overall": {
+      "state": "⚪ 판단 보류 (데이터 부족)",
+      "text_interpretation": "비교 대상인 과거 7일간의 대화 데이터가 부족하여 신뢰할 수 있는 기저선을 수립할 수 없습니다. 정확한 분석을 위해 팀 활동을 조금 더 지속해 주세요! (최소 필요 기준: 10건)"
+    }
+  },
+  {
+    "date": "2026-06-03",
+    "sender_id": "user_C",
+    "data_sufficient": false,
+    "today_count": 10,
+    "baseline_count": 0,
+    "overall": {
+      "state": "⚪ 판단 보류 (데이터 부족)",
+      "text_interpretation": "비교 대상인 과거 7일간의 대화 데이터가 부족하여 신뢰할 수 있는 기저선을 수립할 수 없습니다. 정확한 분석을 위해 팀 활동을 조금 더 지속해 주세요! (최소 필요 기준: 10건)"
+    }
+  },
+  {
+    "date": "2026-06-06",
     "sender_id": "user_A",
     "data_sufficient": true,
+    "today_count": 10,
+    "baseline_count": 10,
     "metrics": {
       "negative": {
         "baseline_ratio": 0.0,
@@ -30,9 +65,11 @@
     }
   },
   {
-    "report_generated_at": "2026-06-07T06:37:45Z",
+    "date": "2026-06-06",
     "sender_id": "user_B",
     "data_sufficient": true,
+    "today_count": 10,
+    "baseline_count": 10,
     "metrics": {
       "negative": {
         "baseline_ratio": 0.0,
@@ -60,9 +97,11 @@
     }
   },
   {
-    "report_generated_at": "2026-06-07T06:37:45Z",
+    "date": "2026-06-06",
     "sender_id": "user_C",
     "data_sufficient": true,
+    "today_count": 10,
+    "baseline_count": 10,
     "metrics": {
       "negative": {
         "baseline_ratio": 0.0,
@@ -90,15 +129,14 @@
     }
   },
   {
-    "report_generated_at": "2026-06-07T06:37:45Z",
+    "date": "2026-06-06",
     "sender_id": "user_D",
     "data_sufficient": false,
+    "today_count": 5,
+    "baseline_count": 0,
     "overall": {
-      "warning_count": 0,
       "state": "⚪ 판단 보류 (데이터 부족)",
       "text_interpretation": "오늘 작성한 메시지가 부족하여 평소 대비 변화를 분석하기 어렵습니다. 정확한 상태 거울을 보여드리기 위해 내일은 조금 더 많은 대화를 나눠보세요! (최소 필요 기준: 10건)"
-    },
-    "today_message_count": 5,
-    "required_message_count": 10
+    }
   }
 ]

@@ -22,10 +22,13 @@
 
 ```
 feature3/
-├─ state_change_analysis.py   # 채팅 로그 → 지표 계산 + 상태 판정 + 리포트 생성 (전 과정)
-├─ sample_chat_log.json       # 입력 ① 기능1·2 라벨이 붙은 채팅 로그 (기능3 단독 실행용)
-├─ sample_chat_log_raw.json   # 입력 ② 원문 text만 있는 로그 (기능1·2 모델 통합 시연용)
-├─ sample_report.json         # 산출물 예시 (실행 시 생성됨)
+├─ state_change_analysis.py   # 채팅 로그 → 지표 계산 + 상태 판정 + 날짜별 리포트 생성 (전 과정)
+├─ preprocess_chat_log.py     # 카카오톡 채팅 CSV → 기능1·2 입력 JSON 변환 + 익명화 전처리기
+├─ chat_log1_raw.json         # 실데이터 ① 통합 노트북 기본 입력 (전처리·익명화 완료, 메시지 다수)
+├─ chat_log2_raw.json         # 실데이터 ② cleaned_chat_log2.csv 전처리 결과
+├─ sample_chat_log_raw.json   # 데모용 원문 text 입력 (폴백)
+├─ sample_chat_log.json       # 기능1·2 라벨이 붙은 입력 (기능3 단독 실행용)
+├─ daily_report.json          # 산출물 — 날짜별 × 사용자별 상태 리포트 (실행 시 생성됨)
 ├─ colab_feature3_member1.ipynb  # 기능1·2 모델 → 기능3 통합 시연 노트북
 └─ requirements.txt           # 패키지 명세
 ```
@@ -42,7 +45,7 @@ python state_change_analysis.py
 ```
 
 - 입력: `sample_chat_log.json` (기능1·2 라벨이 붙은 채팅 로그)
-- 출력: `sample_report.json` (발신자별로 🟢🟡🟠⚪ 중 하나로 판정 + 자연어 해석)
+- 출력: `daily_report.json` (날짜별 × 발신자별로 🟢🟡🟠⚪ 판정 + 자연어 해석)
 - 파이썬 내장 라이브러리만 사용하므로 별도 설치가 없어도 동작합니다.
   (`requirements.txt`는 전체 프로젝트 연계 검수용 명세입니다.)
 
@@ -52,16 +55,70 @@ python state_change_analysis.py
 파일 이동·업로드·경로 수정이 필요 없습니다.
 
 자동으로 일어나는 일:
-1. **저장소 자동 clone** → `state_change_analysis.py`, `sample_chat_log_raw.json` 확보
+1. **저장소 자동 clone** → `state_change_analysis.py`, `chat_log1_raw.json`(실데이터) 확보
 2. **드라이브 자동 마운트 + 필수 파일 검사** — 아래 4개가 `MyDrive`에 있는지 확인
    (없으면 **부족한 파일을 안내하고 종료**)
    - `chaeon_feature1_checkpoint/`, `svm_model.pkl`, `vectorizer.pkl` (기능1 Run all 시 생성)
    - `chaeon_feature2_model/` (기능2 Run all 시 생성)
-3. 기능1·2 모델 **자동 로드** → 원문 → 기능1 추론 → 기능2 추론 → 기능3 분석 → `sample_report.json` 생성
+3. 기능1·2 모델 **자동 로드** → 원문 → 기능1 추론 → 기능2 추론 → 기능3 날짜별 분석
+   → `daily_report.json` 생성 + 전체 요약 표·개인별 멘트 시각화(CELL 5.6)
 
 > 전제: 기능1·2 노트북을 먼저 Run all 해두면 위 4개 파일이 드라이브에 자동 저장돼 있습니다.
 
-> `sample_report.json`은 실행하면 다시 생성되는 산출물입니다. 저장소의 파일은 예시 결과입니다.
+> `daily_report.json`은 실행하면 다시 생성되는 산출물입니다. 저장소의 파일은 예시 결과입니다.
+
+### 실행 시 자동 생성되는 파일
+
+노트북/스크립트를 실행하면 아래 파일이 생성됩니다. (모두 코드 실행 시 재생성되므로 제출 필수는 아닙니다)
+
+| 파일 | 생성 위치 | 내용 | 비고 |
+|---|---|---|---|
+| `sample_chat_log.json` | 노트북 라벨링 셀 | 기능1·2가 라벨링한 결과(감정·공격성 부착) | 통합 노트북에서 원문을 모델로 돌렸을 때만 갱신 |
+| `daily_report.json` | 노트북 CELL 5.5 / 단독 스크립트 | **날짜별 × 사용자별 상태 리포트 (최종 산출물)** | 통합 실행 시 `MyDrive`에도 백업됨 |
+
+> 기능 3은 별도 학습이 없어 `result.txt`는 만들지 않습니다. (학습이 있는 기능 1·2에는 `result.txt`가 있습니다.)
+
+---
+
+## 실제 카카오톡 로그 전처리 (`preprocess_chat_log.py`)
+
+데모용 `sample_chat_log_raw.json` 외에, **실제 카카오톡 채팅 로그**를 기능1·2 입력 형식으로
+변환·익명화하는 전처리 코드와 그 결과물을 함께 제공합니다.
+
+### 입력 / 출력
+
+| 입력 CSV (원본)                         | 전처리 코드                  | 출력 JSON (결과물)        |
+| --------------------------------------- | ---------------------------- | ------------------------- |
+| `../.데이터셋/cleaned_chat_log1.csv`    | `preprocess_chat_log.py`     | `chat_log1_raw.json`      |
+| `../.데이터셋/cleaned_chat_log2.csv`    | `preprocess_chat_log.py`     | `chat_log2_raw.json`      |
+
+- 입력 CSV 컬럼: `timestamp, sender_id, message`
+- `sender_id`는 원본이 이미 `User_A`~`User_D`로 가명화되어 있습니다.
+
+### 전처리가 하는 일
+
+1. **timestamp 변환** — 한국식 표기(`2025. 4. 7. 오후 4:58`) → ISO 8601 KST(`2025-04-07T16:58:00+09:00`)
+2. **placeholder 제거** — `이모티콘`·`사진`·`사진 3장`·`동영상`·`삭제된 메시지입니다.` 등 문장이 아닌 미디어/시스템 표기 제거
+3. **PII 익명화(마스킹)** — 전화번호·주민번호·이메일·링크·계좌/카드번호 등을 `[전화번호]`·`[이메일]`·`[번호]`로 치환
+
+### 실행 방법
+
+```bash
+cd feature3
+
+# cleaned_chat_log1.csv → chat_log1_raw.json (기본값)
+python preprocess_chat_log.py
+
+# cleaned_chat_log2.csv → chat_log2_raw.json (입력/출력 직접 지정)
+python preprocess_chat_log.py --input ../.데이터셋/cleaned_chat_log2.csv --output chat_log2_raw.json
+
+# 이모티콘/사진 등 placeholder도 제거하지 않고 유지하려면
+python preprocess_chat_log.py --keep-placeholders
+```
+
+> 파이썬 내장 라이브러리만 사용하므로 별도 설치 없이 동작합니다.
+> 통합 노트북은 입력 우선순위 1번이 `chat_log1_raw.json`이라, 별도 복사·이름변경 없이
+> 실데이터를 자동으로 사용합니다. (`chat_log2_raw.json`을 쓰려면 노트북의 `INPUT_CANDIDATES` 순서를 조정)
 
 ---
 
