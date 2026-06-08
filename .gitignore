@@ -11,6 +11,9 @@ final_model/
 saved_models/
 results/
 
+# 기능3 통합 노트북 실행 산출물 (실행마다 outputs/<입력명>_<시각>/ 로 재생성)
+feature3/outputs/
+
 # 데이터셋은 깃에 올리지 않고 직접 전달한다 (원본/가공본 모두)
 .데이터셋/
 *.xlsx
