@@ -6,9 +6,9 @@
 파일 이동·이름 변경·경로 수정·수동 복사가 **전혀 없습니다.**
 
 1. **기능 1** — `feature1/sentiment_analysis.ipynb` 를 Colab에서 열고, AIHub 감성대화 데이터 업로드 후 **런타임 → 모두 실행(Run all)**
-   → 학습 결과가 `MyDrive/chaeon_feature1_checkpoint`, `svm_model.pkl`, `vectorizer.pkl` 로 **자동 저장**
+   → 학습 결과가 `MyDrive/feature1/` 폴더(모델 + `result.txt` + `log.txt`)로 **자동 저장**
 2. **기능 2** — `feature2/aggression_detection.ipynb` 를 Colab에서 열고, AIHub 윤리검증 데이터 업로드 후 **Run all**
-   → 학습 결과가 `MyDrive/chaeon_feature2_model` 로 **자동 저장**
+   → 학습 결과가 `MyDrive/feature2/` 폴더(모델 + `result.txt` + `log.txt`)로 **자동 저장**
 3. **기능 3** — `feature3/colab_feature3_member1.ipynb` 를 Colab에서 열고 **Run all**
    → 저장소 자동 clone → 기능1·2 모델을 드라이브에서 **자동 로드** → 원문→기능1→기능2→기능3 날짜별 분석 → 최종 `daily_report.json` 생성
 
@@ -157,8 +157,8 @@ AIHub 텍스트 윤리 검증 데이터셋 사용
 
 | 순서 | 노트북 | 할 일 | 자동으로 일어나는 것 |
 |---|---|---|---|
-| 1 | `feature1/sentiment_analysis.ipynb` | 데이터 업로드 후 **Run all** | 학습 → 모델을 `MyDrive/chaeon_feature1_checkpoint`, `svm_model.pkl`, `vectorizer.pkl` 로 자동 저장 |
-| 2 | `feature2/aggression_detection.ipynb` | 데이터 업로드 후 **Run all** | 학습 → 모델을 `MyDrive/chaeon_feature2_model` 로 자동 저장 |
+| 1 | `feature1/sentiment_analysis.ipynb` | 데이터 업로드 후 **Run all** | 학습 → `MyDrive/feature1/` 에 모델 + `result.txt` + `log.txt` 자동 저장 |
+| 2 | `feature2/aggression_detection.ipynb` | 데이터 업로드 후 **Run all** | 학습 → `MyDrive/feature2/` 에 모델 + `result.txt` + `log.txt` 자동 저장 |
 | 3 | `feature3/colab_feature3_member1.ipynb` | **Run all** | 저장소 자동 clone → 기능1·2 모델 Drive에서 자동 로드 → 원문→기능1→기능2→기능3 날짜별 분석→`daily_report.json` 생성 |
 
 > 기능 3은 첫 셀에서 저장소를 자동 clone하고, 시작 시 기능1·2 모델 4개 파일이 Drive에 있는지 검사합니다.

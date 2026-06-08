@@ -59,10 +59,10 @@ python state_change_analysis.py
 
 자동으로 일어나는 일:
 1. **저장소 자동 clone** → `state_change_analysis.py`, `chat_log1_raw.json`(실데이터) 확보
-2. **드라이브 자동 마운트 + 필수 파일 검사** — 아래 4개가 `MyDrive`에 있는지 확인
+2. **드라이브 자동 마운트 + 필수 파일 검사** — 아래 모델이 기능별 폴더에 있는지 확인
    (없으면 **부족한 파일을 안내하고 종료**)
-   - `chaeon_feature1_checkpoint/`, `svm_model.pkl`, `vectorizer.pkl` (기능1 Run all 시 생성)
-   - `chaeon_feature2_model/` (기능2 Run all 시 생성)
+   - `MyDrive/feature1/` → `chaeon_feature1_checkpoint/`, `svm_model.pkl`, `vectorizer.pkl` (기능1 Run all 시 생성)
+   - `MyDrive/feature2/` → `chaeon_feature2_model/` (기능2 Run all 시 생성)
 3. 기능1·2 모델 **자동 로드** → 원문 → 기능1 추론 → 기능2 추론 → 라벨 검수(CELL 4.7)
    → 기능3 날짜별 분석 → 전체 요약 표·개인별 멘트 시각화(CELL 5.6)
    → 산출물은 `outputs/<입력명>_<실행시각>/` 폴더에 모아 저장 (실행마다 새 폴더, 덮어쓰기 없음)

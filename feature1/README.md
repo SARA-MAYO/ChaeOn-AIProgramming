@@ -74,8 +74,8 @@ feature1/
 실행하면 학습 → Test 평가 → 앙상블 추론까지 진행되고,
 **Accuracy / Macro-F1 / Confusion Matrix** 와 예시 10개가 출력됩니다.
 
-> 🔗 **기능 3 연동**: 마지막 셀이 학습 결과를 **본인 구글 드라이브(MyDrive)** 에 자동 저장합니다.
-> (`chaeon_feature1_checkpoint/`, `svm_model.pkl`, `vectorizer.pkl`)
+> 🔗 **기능 3 연동**: 마지막 셀이 산출물을 **본인 구글 드라이브의 `MyDrive/feature1/` 폴더**에 모아 자동 저장합니다.
+> (`chaeon_feature1_checkpoint/`, `svm_model.pkl`, `vectorizer.pkl`, `result.txt`, `log.txt`)
 > 기능 3 노트북이 이 경로를 그대로 읽으므로 별도 작업이 필요 없습니다. (드라이브 인증 클릭만)
 
 ### 실행 시 자동 생성되는 파일
