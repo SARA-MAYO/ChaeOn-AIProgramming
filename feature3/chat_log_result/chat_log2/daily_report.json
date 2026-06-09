@@ -1,0 +1,490 @@
+[
+  {
+    "date": "2025-11-12",
+    "sender_id": "User_A",
+    "data_sufficient": false,
+    "today_count": 1,
+    "baseline_count": 0,
+    "overall": {
+      "state": "⚪ 판단 보류 (데이터 부족)",
+      "text_interpretation": "오늘 작성한 메시지가 부족하여 평소 대비 변화를 분석하기 어렵습니다. 정확한 상태 거울을 보여드리기 위해 내일은 조금 더 많은 대화를 나눠보세요! (최소 필요 기준: 10건)"
+    }
+  },
+  {
+    "date": "2025-11-18",
+    "sender_id": "User_A",
+    "data_sufficient": false,
+    "today_count": 22,
+    "baseline_count": 1,
+    "overall": {
+      "state": "⚪ 판단 보류 (데이터 부족)",
+      "text_interpretation": "비교 대상인 과거 7일간의 대화 데이터가 부족하여 신뢰할 수 있는 기저선을 수립할 수 없습니다. 정확한 분석을 위해 팀 활동을 조금 더 지속해 주세요! (최소 필요 기준: 10건)"
+    }
+  },
+  {
+    "date": "2025-11-18",
+    "sender_id": "User_B",
+    "data_sufficient": false,
+    "today_count": 10,
+    "baseline_count": 0,
+    "overall": {
+      "state": "⚪ 판단 보류 (데이터 부족)",
+      "text_interpretation": "비교 대상인 과거 7일간의 대화 데이터가 부족하여 신뢰할 수 있는 기저선을 수립할 수 없습니다. 정확한 분석을 위해 팀 활동을 조금 더 지속해 주세요! (최소 필요 기준: 10건)"
+    }
+  },
+  {
+    "date": "2025-11-18",
+    "sender_id": "User_C",
+    "data_sufficient": false,
+    "today_count": 9,
+    "baseline_count": 0,
+    "overall": {
+      "state": "⚪ 판단 보류 (데이터 부족)",
+      "text_interpretation": "오늘 작성한 메시지가 부족하여 평소 대비 변화를 분석하기 어렵습니다. 정확한 상태 거울을 보여드리기 위해 내일은 조금 더 많은 대화를 나눠보세요! (최소 필요 기준: 10건)"
+    }
+  },
+  {
+    "date": "2025-11-19",
+    "sender_id": "User_C",
+    "data_sufficient": false,
+    "today_count": 2,
+    "baseline_count": 9,
+    "overall": {
+      "state": "⚪ 판단 보류 (데이터 부족)",
+      "text_interpretation": "오늘 작성한 메시지가 부족하여 평소 대비 변화를 분석하기 어렵습니다. 정확한 상태 거울을 보여드리기 위해 내일은 조금 더 많은 대화를 나눠보세요! (최소 필요 기준: 10건)"
+    }
+  },
+  {
+    "date": "2025-11-22",
+    "sender_id": "User_A",
+    "data_sufficient": false,
+    "today_count": 5,
+    "baseline_count": 22,
+    "overall": {
+      "state": "⚪ 판단 보류 (데이터 부족)",
+      "text_interpretation": "오늘 작성한 메시지가 부족하여 평소 대비 변화를 분석하기 어렵습니다. 정확한 상태 거울을 보여드리기 위해 내일은 조금 더 많은 대화를 나눠보세요! (최소 필요 기준: 10건)"
+    }
+  },
+  {
+    "date": "2025-11-22",
+    "sender_id": "User_B",
+    "data_sufficient": false,
+    "today_count": 1,
+    "baseline_count": 10,
+    "overall": {
+      "state": "⚪ 판단 보류 (데이터 부족)",
+      "text_interpretation": "오늘 작성한 메시지가 부족하여 평소 대비 변화를 분석하기 어렵습니다. 정확한 상태 거울을 보여드리기 위해 내일은 조금 더 많은 대화를 나눠보세요! (최소 필요 기준: 10건)"
+    }
+  },
+  {
+    "date": "2025-11-22",
+    "sender_id": "User_C",
+    "data_sufficient": false,
+    "today_count": 2,
+    "baseline_count": 11,
+    "overall": {
+      "state": "⚪ 판단 보류 (데이터 부족)",
+      "text_interpretation": "오늘 작성한 메시지가 부족하여 평소 대비 변화를 분석하기 어렵습니다. 정확한 상태 거울을 보여드리기 위해 내일은 조금 더 많은 대화를 나눠보세요! (최소 필요 기준: 10건)"
+    }
+  },
+  {
+    "date": "2025-11-24",
+    "sender_id": "User_A",
+    "data_sufficient": true,
+    "today_count": 35,
+    "baseline_count": 27,
+    "metrics": {
+      "negative": {
+        "baseline_ratio": 22.22,
+        "today_ratio": 25.71,
+        "change": 3.49,
+        "state": "평소와 비슷"
+      },
+      "aggressive": {
+        "baseline_ratio": 11.11,
+        "today_ratio": 5.71,
+        "change": -5.4,
+        "state": "평소보다 낮음"
+      },
+      "participation": {
+        "baseline_average": 3.86,
+        "today_count": 35,
+        "change": 806.74,
+        "state": "평소보다 많음"
+      }
+    },
+    "overall": {
+      "warning_count": 0,
+      "state": "🟢 평소와 비슷",
+      "text_interpretation": "팀 프로젝트에 적극적으로 참여하며 소통 참여량을 활발히 끌어올리고 계시네요! 조원들에게 든든한 에너지가 되고 있습니다."
+    }
+  },
+  {
+    "date": "2025-11-24",
+    "sender_id": "User_B",
+    "data_sufficient": true,
+    "today_count": 21,
+    "baseline_count": 11,
+    "metrics": {
+      "negative": {
+        "baseline_ratio": 36.36,
+        "today_ratio": 33.33,
+        "change": -3.03,
+        "state": "평소와 비슷"
+      },
+      "aggressive": {
+        "baseline_ratio": 0.0,
+        "today_ratio": 4.76,
+        "change": 4.76,
+        "state": "평소와 비슷"
+      },
+      "participation": {
+        "baseline_average": 1.57,
+        "today_count": 21,
+        "change": 1237.58,
+        "state": "평소보다 많음"
+      }
+    },
+    "overall": {
+      "warning_count": 0,
+      "state": "🟢 평소와 비슷",
+      "text_interpretation": "팀 프로젝트에 적극적으로 참여하며 소통 참여량을 활발히 끌어올리고 계시네요! 조원들에게 든든한 에너지가 되고 있습니다."
+    }
+  },
+  {
+    "date": "2025-11-24",
+    "sender_id": "User_C",
+    "data_sufficient": false,
+    "today_count": 1,
+    "baseline_count": 13,
+    "overall": {
+      "state": "⚪ 판단 보류 (데이터 부족)",
+      "text_interpretation": "오늘 작성한 메시지가 부족하여 평소 대비 변화를 분석하기 어렵습니다. 정확한 상태 거울을 보여드리기 위해 내일은 조금 더 많은 대화를 나눠보세요! (최소 필요 기준: 10건)"
+    }
+  },
+  {
+    "date": "2025-11-25",
+    "sender_id": "User_A",
+    "data_sufficient": true,
+    "today_count": 29,
+    "baseline_count": 62,
+    "metrics": {
+      "negative": {
+        "baseline_ratio": 24.19,
+        "today_ratio": 34.48,
+        "change": 10.29,
+        "state": "평소보다 높음"
+      },
+      "aggressive": {
+        "baseline_ratio": 8.06,
+        "today_ratio": 10.34,
+        "change": 2.28,
+        "state": "평소와 비슷"
+      },
+      "participation": {
+        "baseline_average": 8.86,
+        "today_count": 29,
+        "change": 227.31,
+        "state": "평소보다 많음"
+      }
+    },
+    "overall": {
+      "warning_count": 1,
+      "state": "🟡 평소와 조금 다름",
+      "text_interpretation": "평소보다 대화 참여량이 급격히 늘어난 가운데, 부정적인 감정 표현이 함께 증가한 것이 관측되었습니다. 과도한 열정이나 피로로 인해 날카로워진 것은 아닌지 조원들과 잠시 숨을 골라보세요."
+    }
+  },
+  {
+    "date": "2025-11-25",
+    "sender_id": "User_B",
+    "data_sufficient": true,
+    "today_count": 16,
+    "baseline_count": 32,
+    "metrics": {
+      "negative": {
+        "baseline_ratio": 34.38,
+        "today_ratio": 31.25,
+        "change": -3.13,
+        "state": "평소와 비슷"
+      },
+      "aggressive": {
+        "baseline_ratio": 3.12,
+        "today_ratio": 25.0,
+        "change": 21.88,
+        "state": "평소보다 높음"
+      },
+      "participation": {
+        "baseline_average": 4.57,
+        "today_count": 16,
+        "change": 250.11,
+        "state": "평소보다 많음"
+      }
+    },
+    "overall": {
+      "warning_count": 1,
+      "state": "🟡 평소와 조금 다름",
+      "text_interpretation": "평소 대비 날카롭거나 공격적인 표현이 관측되었습니다. 메시지를 전송하기 전, 상대방의 입장에서 한 번만 더 읽어보는 건 어떨까요?"
+    }
+  },
+  {
+    "date": "2025-11-25",
+    "sender_id": "User_C",
+    "data_sufficient": false,
+    "today_count": 2,
+    "baseline_count": 14,
+    "overall": {
+      "state": "⚪ 판단 보류 (데이터 부족)",
+      "text_interpretation": "오늘 작성한 메시지가 부족하여 평소 대비 변화를 분석하기 어렵습니다. 정확한 상태 거울을 보여드리기 위해 내일은 조금 더 많은 대화를 나눠보세요! (최소 필요 기준: 10건)"
+    }
+  },
+  {
+    "date": "2025-11-26",
+    "sender_id": "User_A",
+    "data_sufficient": false,
+    "today_count": 8,
+    "baseline_count": 69,
+    "overall": {
+      "state": "⚪ 판단 보류 (데이터 부족)",
+      "text_interpretation": "오늘 작성한 메시지가 부족하여 평소 대비 변화를 분석하기 어렵습니다. 정확한 상태 거울을 보여드리기 위해 내일은 조금 더 많은 대화를 나눠보세요! (최소 필요 기준: 10건)"
+    }
+  },
+  {
+    "date": "2025-11-26",
+    "sender_id": "User_B",
+    "data_sufficient": false,
+    "today_count": 9,
+    "baseline_count": 38,
+    "overall": {
+      "state": "⚪ 판단 보류 (데이터 부족)",
+      "text_interpretation": "오늘 작성한 메시지가 부족하여 평소 대비 변화를 분석하기 어렵습니다. 정확한 상태 거울을 보여드리기 위해 내일은 조금 더 많은 대화를 나눠보세요! (최소 필요 기준: 10건)"
+    }
+  },
+  {
+    "date": "2025-11-26",
+    "sender_id": "User_C",
+    "data_sufficient": false,
+    "today_count": 2,
+    "baseline_count": 7,
+    "overall": {
+      "state": "⚪ 판단 보류 (데이터 부족)",
+      "text_interpretation": "오늘 작성한 메시지가 부족하여 평소 대비 변화를 분석하기 어렵습니다. 정확한 상태 거울을 보여드리기 위해 내일은 조금 더 많은 대화를 나눠보세요! (최소 필요 기준: 10건)"
+    }
+  },
+  {
+    "date": "2025-11-27",
+    "sender_id": "User_A",
+    "data_sufficient": false,
+    "today_count": 1,
+    "baseline_count": 77,
+    "overall": {
+      "state": "⚪ 판단 보류 (데이터 부족)",
+      "text_interpretation": "오늘 작성한 메시지가 부족하여 평소 대비 변화를 분석하기 어렵습니다. 정확한 상태 거울을 보여드리기 위해 내일은 조금 더 많은 대화를 나눠보세요! (최소 필요 기준: 10건)"
+    }
+  },
+  {
+    "date": "2025-11-27",
+    "sender_id": "User_B",
+    "data_sufficient": false,
+    "today_count": 1,
+    "baseline_count": 47,
+    "overall": {
+      "state": "⚪ 판단 보류 (데이터 부족)",
+      "text_interpretation": "오늘 작성한 메시지가 부족하여 평소 대비 변화를 분석하기 어렵습니다. 정확한 상태 거울을 보여드리기 위해 내일은 조금 더 많은 대화를 나눠보세요! (최소 필요 기준: 10건)"
+    }
+  },
+  {
+    "date": "2025-11-30",
+    "sender_id": "User_A",
+    "data_sufficient": false,
+    "today_count": 7,
+    "baseline_count": 73,
+    "overall": {
+      "state": "⚪ 판단 보류 (데이터 부족)",
+      "text_interpretation": "오늘 작성한 메시지가 부족하여 평소 대비 변화를 분석하기 어렵습니다. 정확한 상태 거울을 보여드리기 위해 내일은 조금 더 많은 대화를 나눠보세요! (최소 필요 기준: 10건)"
+    }
+  },
+  {
+    "date": "2025-11-30",
+    "sender_id": "User_B",
+    "data_sufficient": false,
+    "today_count": 4,
+    "baseline_count": 47,
+    "overall": {
+      "state": "⚪ 판단 보류 (데이터 부족)",
+      "text_interpretation": "오늘 작성한 메시지가 부족하여 평소 대비 변화를 분석하기 어렵습니다. 정확한 상태 거울을 보여드리기 위해 내일은 조금 더 많은 대화를 나눠보세요! (최소 필요 기준: 10건)"
+    }
+  },
+  {
+    "date": "2025-11-30",
+    "sender_id": "User_C",
+    "data_sufficient": false,
+    "today_count": 1,
+    "baseline_count": 5,
+    "overall": {
+      "state": "⚪ 판단 보류 (데이터 부족)",
+      "text_interpretation": "오늘 작성한 메시지가 부족하여 평소 대비 변화를 분석하기 어렵습니다. 정확한 상태 거울을 보여드리기 위해 내일은 조금 더 많은 대화를 나눠보세요! (최소 필요 기준: 10건)"
+    }
+  },
+  {
+    "date": "2025-12-01",
+    "sender_id": "User_A",
+    "data_sufficient": true,
+    "today_count": 31,
+    "baseline_count": 80,
+    "metrics": {
+      "negative": {
+        "baseline_ratio": 36.25,
+        "today_ratio": 35.48,
+        "change": -0.77,
+        "state": "평소와 비슷"
+      },
+      "aggressive": {
+        "baseline_ratio": 7.5,
+        "today_ratio": 3.23,
+        "change": -4.27,
+        "state": "평소와 비슷"
+      },
+      "participation": {
+        "baseline_average": 11.43,
+        "today_count": 31,
+        "change": 171.22,
+        "state": "평소보다 많음"
+      }
+    },
+    "overall": {
+      "warning_count": 0,
+      "state": "🟢 평소와 비슷",
+      "text_interpretation": "팀 프로젝트에 적극적으로 참여하며 소통 참여량을 활발히 끌어올리고 계시네요! 조원들에게 든든한 에너지가 되고 있습니다."
+    }
+  },
+  {
+    "date": "2025-12-01",
+    "sender_id": "User_B",
+    "data_sufficient": false,
+    "today_count": 7,
+    "baseline_count": 51,
+    "overall": {
+      "state": "⚪ 판단 보류 (데이터 부족)",
+      "text_interpretation": "오늘 작성한 메시지가 부족하여 평소 대비 변화를 분석하기 어렵습니다. 정확한 상태 거울을 보여드리기 위해 내일은 조금 더 많은 대화를 나눠보세요! (최소 필요 기준: 10건)"
+    }
+  },
+  {
+    "date": "2025-12-01",
+    "sender_id": "User_C",
+    "data_sufficient": false,
+    "today_count": 23,
+    "baseline_count": 6,
+    "overall": {
+      "state": "⚪ 판단 보류 (데이터 부족)",
+      "text_interpretation": "비교 대상인 과거 7일간의 대화 데이터가 부족하여 신뢰할 수 있는 기저선을 수립할 수 없습니다. 정확한 분석을 위해 팀 활동을 조금 더 지속해 주세요! (최소 필요 기준: 10건)"
+    }
+  },
+  {
+    "date": "2025-12-02",
+    "sender_id": "User_A",
+    "data_sufficient": true,
+    "today_count": 20,
+    "baseline_count": 76,
+    "metrics": {
+      "negative": {
+        "baseline_ratio": 40.79,
+        "today_ratio": 45.0,
+        "change": 4.21,
+        "state": "평소와 비슷"
+      },
+      "aggressive": {
+        "baseline_ratio": 6.58,
+        "today_ratio": 0.0,
+        "change": -6.58,
+        "state": "평소보다 낮음"
+      },
+      "participation": {
+        "baseline_average": 10.86,
+        "today_count": 20,
+        "change": 84.16,
+        "state": "평소보다 많음"
+      }
+    },
+    "overall": {
+      "warning_count": 0,
+      "state": "🟢 평소와 비슷",
+      "text_interpretation": "팀 프로젝트에 적극적으로 참여하며 소통 참여량을 활발히 끌어올리고 계시네요! 조원들에게 든든한 에너지가 되고 있습니다."
+    }
+  },
+  {
+    "date": "2025-12-02",
+    "sender_id": "User_B",
+    "data_sufficient": false,
+    "today_count": 4,
+    "baseline_count": 37,
+    "overall": {
+      "state": "⚪ 판단 보류 (데이터 부족)",
+      "text_interpretation": "오늘 작성한 메시지가 부족하여 평소 대비 변화를 분석하기 어렵습니다. 정확한 상태 거울을 보여드리기 위해 내일은 조금 더 많은 대화를 나눠보세요! (최소 필요 기준: 10건)"
+    }
+  },
+  {
+    "date": "2025-12-02",
+    "sender_id": "User_C",
+    "data_sufficient": false,
+    "today_count": 4,
+    "baseline_count": 28,
+    "overall": {
+      "state": "⚪ 판단 보류 (데이터 부족)",
+      "text_interpretation": "오늘 작성한 메시지가 부족하여 평소 대비 변화를 분석하기 어렵습니다. 정확한 상태 거울을 보여드리기 위해 내일은 조금 더 많은 대화를 나눠보세요! (최소 필요 기준: 10건)"
+    }
+  },
+  {
+    "date": "2025-12-03",
+    "sender_id": "User_A",
+    "data_sufficient": true,
+    "today_count": 12,
+    "baseline_count": 67,
+    "metrics": {
+      "negative": {
+        "baseline_ratio": 44.78,
+        "today_ratio": 25.0,
+        "change": -19.78,
+        "state": "평소보다 낮음"
+      },
+      "aggressive": {
+        "baseline_ratio": 2.99,
+        "today_ratio": 0.0,
+        "change": -2.99,
+        "state": "평소와 비슷"
+      },
+      "participation": {
+        "baseline_average": 9.57,
+        "today_count": 12,
+        "change": 25.39,
+        "state": "평소보다 많음"
+      }
+    },
+    "overall": {
+      "warning_count": 0,
+      "state": "🟢 평소와 비슷",
+      "text_interpretation": "팀 프로젝트에 적극적으로 참여하며 소통 참여량을 활발히 끌어올리고 계시네요! 조원들에게 든든한 에너지가 되고 있습니다."
+    }
+  },
+  {
+    "date": "2025-12-03",
+    "sender_id": "User_B",
+    "data_sufficient": false,
+    "today_count": 3,
+    "baseline_count": 25,
+    "overall": {
+      "state": "⚪ 판단 보류 (데이터 부족)",
+      "text_interpretation": "오늘 작성한 메시지가 부족하여 평소 대비 변화를 분석하기 어렵습니다. 정확한 상태 거울을 보여드리기 위해 내일은 조금 더 많은 대화를 나눠보세요! (최소 필요 기준: 10건)"
+    }
+  },
+  {
+    "date": "2025-12-03",
+    "sender_id": "User_C",
+    "data_sufficient": false,
+    "today_count": 8,
+    "baseline_count": 30,
+    "overall": {
+      "state": "⚪ 판단 보류 (데이터 부족)",
+      "text_interpretation": "오늘 작성한 메시지가 부족하여 평소 대비 변화를 분석하기 어렵습니다. 정확한 상태 거울을 보여드리기 위해 내일은 조금 더 많은 대화를 나눠보세요! (최소 필요 기준: 10건)"
+    }
+  }
+]

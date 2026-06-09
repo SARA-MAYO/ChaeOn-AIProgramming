@@ -47,7 +47,7 @@
 
 - **업로드 방법(Colab):** 왼쪽 파일 영역(폴더 아이콘) → 드래그&드롭, 또는 우클릭 → 업로드.
   (Colab 세션이 끊기면 업로드 파일은 사라지므로, 그 기능을 다시 돌릴 땐 재업로드합니다.)
-- **원본 출처(AIHub):** https://www.aihub.or.kr/ — 데이터셋 상세·전처리는 아래 [데이터셋](#데이터셋) 및 [`datasets/dataset_information.md`](datasets/dataset_information.md) 참고.
+- **원본 출처(AIHub):** https://www.aihub.or.kr/ — 데이터셋 상세·전처리는 아래 [데이터셋](#데이터셋) 섹션 참고.
 - **기능 3 입력**(`chat_log1_raw.json`, `chat_log2_raw.json`)은 익명화·PII 마스킹을 마친 JSON으로 **이미 저장소에 포함**되어 있어 추가 업로드가 필요 없습니다.
 
 ---
@@ -98,13 +98,26 @@
 
 ## 데이터셋
 
+> 원본(AIHub·실제 채팅)은 라이선스·개인정보 문제로 저장소에 포함하지 않으며, 전처리·분할은 모두 각 노트북 안에서 자동 수행됩니다. (중간 산출물도 깃에 올리지 않고 매 실행 시 원본에서 재생성)
+
 ### 기능 1 — 감정 분석
-- **출처**: AIHub 감성대화 말뭉치 (https://www.aihub.or.kr/)
-- **전처리**(노트북 실행 중 자동 수행): `기쁨` → 긍정(1) / 그 외 감정 → 부정(0), `text` 기준 중복 제거(누출 방지), 1:1 다운샘플링(seed=42), Stratified 8:1:1 분할(seed=42)
+- **출처**: AIHub 감성대화 말뭉치 — https://www.aihub.or.kr/ → "감성대화 말뭉치" 검색·신청
+- **원본 파일** (Colab `/content/`에 업로드): `감성대화말뭉치(최종데이터)_Training.xlsx`, `감성대화말뭉치(최종데이터)_Validation.xlsx`
+- **전처리**(`sentiment_analysis.ipynb` Cell 3에서 자동 수행):
+  1. 두 xlsx에서 `감정_대분류`, `사람문장1~3`만 읽어 통합 → **58,271행**, 사람문장 1·2·3을 한 문장으로 결합
+  2. 이진 라벨링: `기쁨` → 긍정(1) / 그 외 감정 → 부정(0)  (원본 분포: 긍정 7,339 / 부정 50,932)
+  3. **1:1 다운샘플링**(seed=42) → **14,678행** (긍정·부정 각 7,339)
+  4. `text` 기준 중복 제거(누출 방지) 후 **Stratified 8:1:1 분할**(seed=42) → Train 11,742 / Val 1,468 / Test 1,468
 
 ### 기능 2 — 공격성 탐지
-- **출처**: AIHub 텍스트 윤리 검증 데이터셋 (https://www.aihub.or.kr/)
-- **전처리**(노트북 실행 중 자동 수행): intensity 점수 → 3단계 라벨링 (`<1.0`→0 / `1.0~1.8`→1 / `≥1.8`→2), 결측·공백·중복 제거, Stratified 8:1:1 분할(seed=42)
+- **출처**: AIHub 텍스트 윤리 검증 데이터셋 — https://www.aihub.or.kr/ → 해당 데이터셋 신청·다운로드
+- **원본 파일** (Colab `/content/`에 업로드, 파일명 정확히 일치 필요): `talksets-train-1_aihub.csv`
+- **전처리**(`aggression_detection.ipynb` Cell 4에서 자동 수행):
+  1. csv 로드 → **70,593행**
+  2. intensity 점수 3단계 라벨링: `<1.0` → 비공격(0) / `1.0~1.8` → 약한공격(1) / `≥1.8` → 강한공격(2)
+  3. 결측·공백·중복(text 기준) 제거 → **69,309행** (0=29,487 / 1=21,995 / 2=17,827)
+  4. 다운샘플링 생략(원본 규모 유지) · 중간파일 `aggression_processed_subset.csv` 저장(깃 제외, 실행 시 재생성)
+  5. **Stratified 8:1:1 분할**(seed=42) → Train 55,447 / Val 6,931 / Test 6,931
 
 ### 기능 3 — 상태 변화 분석 (실제 채팅 로그)
 - **출처**: 팀원의 지인이 진행한 **실제 카카오톡 단체 채팅** (팀원을 통해 전달받음)
@@ -113,7 +126,6 @@
 - **결과물**(익명화 완료, 저장소 포함): `feature3/chat_log1_raw.json`, `feature3/chat_log2_raw.json`
 
 > 저장소에 포함된 채팅 로그는 **익명화·PII 마스킹을 마친 데이터**이며, 원본(가명화 전) 로그는 포함하지 않습니다.
-> 데이터셋 상세는 [`datasets/dataset_information.md`](datasets/dataset_information.md) 참고.
 
 ---
 
@@ -177,10 +189,8 @@ CHAEON-AIPROGRAMMING
 │   ├── chat_log1_raw.json · chat_log2_raw.json   # 실데이터 (익명화 완료)
 │   └── README.md
 │
-├── docs
-│   └── 기능3_설계결과_보고서.pdf
-└── datasets
-    └── dataset_information.md
+└── docs
+    └── 기능3_설계결과_보고서.pdf
 ```
 
 - 각 기능 상세 실행법: [`feature1/README.md`](feature1/README.md) · [`feature2/README.md`](feature2/README.md) · [`feature3/README.md`](feature3/README.md)

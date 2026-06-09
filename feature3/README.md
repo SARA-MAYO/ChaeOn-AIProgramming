@@ -38,7 +38,7 @@ feature3/
 ├─ log.txt                         # 단독 스크립트(①) 실행 로그 (재현성 증빙)
 ├─ result.txt                      # 재현성·적법성 기록 (Seed·판정 기준·학습 미사용)
 ├─ outputs/                        # 통합 노트북(②) 산출물 — 실행마다 <입력명>_<실행시각>/ 폴더로 분리 (gitignore)
-├─ example_outputs/                # 실데이터 2개를 실제로 돌린 시뮬레이션 결과물 (chat_log1/ · chat_log2/)
+├─ chat_log_result/                # 실데이터 2개를 실제로 돌린 산출물 (chat_log1/ · chat_log2/)
 │  # ── 문서 ──
 ├─ README.md
 ├─ requirements.txt                # 패키지 명세 (pandas / numpy / scikit-learn)
@@ -96,7 +96,7 @@ python state_change_analysis.py
 
 ### (참고) 통합 실행 상세 — `colab_feature3_member1.ipynb`
 
-`colab_feature3_member1.ipynb`를 코랩에서 열고 **런타임 → 모두 실행(Run all)** 하면 됩니다.
+`colab_feature3_member1.ipynb`를 Colab에서 열고 **런타임 → 모두 실행(Run all)** 하면 됩니다.
 파일 이동·업로드·경로 수정이 필요 없습니다.
 
 자동으로 일어나는 일:
@@ -139,14 +139,14 @@ python state_change_analysis.py
 
 ---
 
-## 실제 시뮬레이션 결과물 (`example_outputs/`)
+## 실제 분석 결과물 (`chat_log_result/`)
 
-데모 샘플이 아니라, **실데이터 단톡방 2개를 통합 노트북으로 실제로 돌려서 나온 산출물**을
+**실데이터 단톡방 2개를 통합 노트북으로 실제로 돌려서 나온 산출물**을
 입력별로 모아둔 폴더입니다. 채점자가 노트북·GPU를 직접 돌리지 않고도 기능3의 **최종 산출물
 (날짜별 × 발신자별 상태 리포트)** 을 바로 확인할 수 있습니다.
 
 ```
-example_outputs/
+chat_log_result/
 ├─ chat_log1/        # chat_log1_raw.json 실제 실행 결과
 │  ├─ daily_report.json     # 날짜별 × 발신자별 🟢🟡🟠⚪ 판정 (최종 산출물)
 │  └─ label_review.csv      # (선택) 원문 ↔ 감정/공격성 라벨 검수
@@ -158,9 +158,9 @@ example_outputs/
 - **두 로그는 서로 다른 단톡방**이라 각각 따로 분석합니다. (baseline이 "한 채팅방 안 직전 7일 vs 당일"
   비교라 합치면 의미가 없음 → 입력별 폴더 분리)
 - 채점 필수는 아닙니다. 코드 + 데이터 + 시드(42)로 Colab에서 그대로 **재현**됩니다.
-- 만드는 법: `chat_log1`은 노트북 그대로 Run all, `chat_log2`는 `INPUT_CANDIDATES` 순서를
-  `chat_log2_raw.json` 먼저로 바꿔 한 번 더 Run all → 각 `outputs/<입력명>_<시각>/`의
-  `daily_report.json`(+ `label_review.csv`)을 위 폴더로 복사. (상세: `example_outputs/README.md`)
+- 만드는 법: 노트북을 **Run all** 한 번 하면 `INPUTS_TO_RUN`에 따라 `chat_log1` → `chat_log2`가
+  순서대로 자동 실행되어 각각 `outputs/<입력명>_<시각>/`에 저장됩니다 → 거기서
+  `daily_report.json`(+ `label_review.csv`)을 위 폴더로 복사. (상세: `chat_log_result/README.md`)
 
 ---
 
@@ -201,8 +201,8 @@ python preprocess_chat_log.py --keep-placeholders
 ```
 
 > 파이썬 내장 라이브러리만 사용하므로 별도 설치 없이 동작합니다.
-> 통합 노트북은 입력 우선순위 1번이 `chat_log1_raw.json`이라, 별도 복사·이름변경 없이
-> 실데이터를 자동으로 사용합니다. (`chat_log2_raw.json`을 쓰려면 노트북의 `INPUT_CANDIDATES` 순서를 조정)
+> 통합 노트북은 `INPUTS_TO_RUN = ["chat_log1_raw.json", "chat_log2_raw.json"]`에 따라
+> 별도 복사·이름변경 없이 두 실데이터를 **Run all 한 번에 순서대로 자동 실행**합니다.
 
 ---
 
