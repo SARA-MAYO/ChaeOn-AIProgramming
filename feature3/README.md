@@ -3,6 +3,9 @@
 기능 1(감정), 기능 2(공격성) 결과를 이용해 사용자의 **상태 변화**를 분석합니다.
 별도 학습이 없으며, 기능 1·2의 출력과 채팅 로그를 입력으로 받아 리포트를 생성합니다.
 
+> 환경 세팅·전체 실행 순서(기능 1→2→3)·드라이브 저장 구조·생성 파일 목록은 **루트 [`../README.md`](../README.md)** 참고.
+> 이 문서는 기능 3의 **폴더 구성 · 단독 실행 · 카카오톡 전처리 · 입력 형식** 등 고유 디테일을 담습니다.
+
 ## 분석 항목
 
 - 부정 감정 변화
@@ -19,8 +22,6 @@
 ---
 
 ## 폴더 구성
-
-### 저장소 `feature3/` 폴더
 
 ```
 feature3/
@@ -45,42 +46,17 @@ feature3/
 └─ 기능3_설계결과_보고서.pdf
 ```
 
-### 구글 드라이브(MyDrive) 저장 구조 — 기능1·2·3 연동
-
-각 기능을 Colab에서 **Run all** 하면, 산출물이 **기능별 폴더**로 드라이브에 모입니다.
-기능3는 여기서 기능1·2 모델을 불러옵니다.
-
-```
-MyDrive/
-├─ feature1/                       # 기능1 Run all 산출물
-│  ├─ chaeon_feature1_checkpoint/  #   KcELECTRA 모델 + 토크나이저
-│  ├─ svm_model.pkl                #   SVM 모델
-│  ├─ vectorizer.pkl               #   TF-IDF 벡터라이저
-│  ├─ result.txt                   #   Test 성능(Accuracy·Macro-F1) 자동 생성
-│  └─ log.txt                      #   실행 로그
-├─ feature2/                       # 기능2 Run all 산출물
-│  ├─ chaeon_feature2_model/       #   KoELECTRA 모델 + 토크나이저
-│  ├─ result.txt                   #   Test 성능(3-class + Binary) 자동 생성
-│  └─ log.txt
-└─ feature3_outputs/               # 기능3 Run all 산출물 (실행마다 새 폴더)
-   └─ <입력명>_<실행시각>/          #   예: chat_log1_raw_20260608_153012/
-      ├─ labeled.json              #   기능1·2가 라벨링한 결과
-      ├─ label_review.csv / .txt   #   라벨 검수 (원문 ↔ 감정/공격성)
-      └─ daily_report.json         #   날짜별 × 사용자별 상태 리포트
-```
-
-> 기능3 통합 노트북은 시작 시 `MyDrive/feature1/`·`MyDrive/feature2/` 에 위 모델이 있는지 검사합니다.
-> (없으면 부족한 파일을 안내하고 종료 → 해당 기능 노트북을 먼저 Run all)
+> 통합 노트북은 시작 시 `MyDrive/feature1/`·`MyDrive/feature2/` 의 기능1·2 모델을 검사·로드하고, 없으면 부족한 파일을 안내하고 종료합니다. (드라이브 저장 구조 상세는 루트 README)
 
 ---
 
 ## 실행 방법
 
-### ① 기능1·2 모델까지 통합 실행 (Colab — 정식 경로) — **Run all만 하면 끝**
+### ① 통합 실행 (Colab — 정식 경로)
 
-이것이 **실제 기능1·2 모델 결과로 기능3를 돌리는 정식 경로**입니다. (Colab 전용)
+`colab_feature3_member1.ipynb` 를 Colab에서 **Run all** → 저장소 자동 clone → 드라이브 인증 → 기능1·2 모델 자동 로드 → 원문 → 기능1 추론 → 기능2 추론 → 라벨 검수 → 기능3 날짜별 분석 → `outputs/<입력명>_<실행시각>/` 에 산출물 저장 (실행마다 새 폴더, 덮어쓰기 없음). 업로드·경로 수정 불필요.
 
-(아래 ②는 실제 모델 추론 없이 기능3 **로직만** 점검하는 개발용 보조 경로입니다.)
+이것이 **실제 기능1·2 모델 결과로 기능3를 돌리는 정식 경로**입니다. (전체 실행 순서·전제 조건은 루트 README 참고)
 
 ### ② 기능 3 로직 단독 점검 (개발용 — 모델 결과 아님)
 
@@ -94,73 +70,16 @@ python state_change_analysis.py
 - **모델 추론 없이 기능3 판정 로직만 빠르게 확인**하는 용도입니다. 실제 모델 결과로 보려면 위 ①(Colab)을 사용하세요.
 - 파이썬 내장 라이브러리만 사용하므로 별도 설치 없이 동작합니다.
 
-### (참고) 통합 실행 상세 — `colab_feature3_member1.ipynb`
-
-`colab_feature3_member1.ipynb`를 Colab에서 열고 **런타임 → 모두 실행(Run all)** 하면 됩니다.
-파일 이동·업로드·경로 수정이 필요 없습니다.
-
-자동으로 일어나는 일:
-1. **저장소 자동 clone** → `state_change_analysis.py`, `chat_log1_raw.json`(실데이터) 확보
-2. **드라이브 자동 마운트 + 필수 파일 검사** — 아래 모델이 기능별 폴더에 있는지 확인
-   (없으면 **부족한 파일을 안내하고 종료**)
-   - `MyDrive/feature1/` → `chaeon_feature1_checkpoint/`, `svm_model.pkl`, `vectorizer.pkl` (기능1 Run all 시 생성)
-   - `MyDrive/feature2/` → `chaeon_feature2_model/` (기능2 Run all 시 생성)
-3. 기능1·2 모델 **자동 로드** → 원문 → 기능1 추론 → 기능2 추론 → 라벨 검수(CELL 4.7)
-   → 기능3 날짜별 분석 → 전체 요약 표·개인별 멘트 시각화(CELL 5.6)
-   → 산출물은 `outputs/<입력명>_<실행시각>/` 폴더에 모아 저장 (실행마다 새 폴더, 덮어쓰기 없음)
-
-> 전제: 기능1·2 노트북을 먼저 Run all 해두면 위 4개 파일이 드라이브에 자동 저장돼 있습니다.
-
-> 통합 노트북은 실행마다 `outputs/<입력명>_<실행시각>/` 폴더를 새로 만들어 산출물을 저장합니다.
-> 채팅 로그를 여러 개 돌려도 서로 덮어쓰지 않으며, 저장소의 원본 입력 파일(`sample_chat_log.json` 등)도 보존됩니다.
-
-### 실행 시 자동 생성되는 파일
-
-코드를 실행하면 아래 파일이 생성됩니다. (모두 재생성되므로 제출 필수는 아닙니다)
-
-**통합 노트북(②)** — 실행마다 `outputs/<입력명>_<실행시각>/` 폴더 안에 저장 (+ `MyDrive/feature3_outputs/`에 백업):
-
-| 파일 | 만드는 셀 | 내용 |
-|---|---|---|
-| `labeled.json` | CELL 4 | 기능1·2가 라벨링한 결과(감정·공격성). 원문을 모델로 돌렸을 때만 생성 |
-| `label_review.csv` / `.txt` | CELL 4.7 | 라벨 검수 — 원문 ↔ 감정/공격성 전체 (정답이 없는 실데이터를 사람이 눈으로 확인) |
-| `daily_report.json` | CELL 5.5 | **날짜별 × 사용자별 상태 리포트 (최종 산출물)** |
-
-**단독 스크립트(①)** `python state_change_analysis.py`:
-
-| 파일 | 내용 |
-|---|---|
-| `daily_report.json` | 날짜별 × 사용자별 상태 리포트 (`feature3/` 루트에 생성) |
-| `log.txt` | 실행 로그 — 발신자별 판정 + 가드레일 상수 + 적법성 (재현성 증빙, 매 실행 갱신) |
-
-> 기능 3은 별도 학습이 없어 `result.txt`에 성능 metric(Accuracy 등)은 없지만,
-> 재현성·적법성 기록용으로 `feature3/log.txt`·`feature3/result.txt`를 둡니다.
+> 기능 3은 별도 학습이 없어 `result.txt`에 성능 metric(Accuracy 등)은 없지만, 재현성·적법성 기록용으로 `log.txt`·`result.txt`를 둡니다.
 > (Seed=42, 판정 기준 상수, "학습/검증/테스트셋 미사용" 등. 모델 자체 성능은 기능1·2의 `result.txt` 참조.)
 
 ---
 
 ## 실제 분석 결과물 (`chat_log_result/`)
 
-**실데이터 단톡방 2개를 통합 노트북으로 실제로 돌려서 나온 산출물**을
-입력별로 모아둔 폴더입니다. 채점자가 노트북·GPU를 직접 돌리지 않고도 기능3의 **최종 산출물
-(날짜별 × 발신자별 상태 리포트)** 을 바로 확인할 수 있습니다.
+실데이터 단톡방 2개를 통합 노트북으로 **실제로 돌려 나온 산출물**(날짜별 × 발신자별 상태 리포트)을 입력별로 모아둔 폴더입니다. 노트북·GPU를 직접 돌리지 않고도 기능3의 최종 결과를 바로 확인할 수 있습니다. (채점 필수 아님 — 코드 + 데이터 + 시드(42)로 Colab에서 그대로 재현)
 
-```
-chat_log_result/
-├─ chat_log1/        # chat_log1_raw.json 실제 실행 결과
-│  ├─ daily_report.json     # 날짜별 × 발신자별 🟢🟡🟠⚪ 판정 (최종 산출물)
-│  └─ label_review.csv      # (선택) 원문 ↔ 감정/공격성 라벨 검수
-└─ chat_log2/        # chat_log2_raw.json 실제 실행 결과
-   ├─ daily_report.json
-   └─ label_review.csv
-```
-
-- **두 로그는 서로 다른 단톡방**이라 각각 따로 분석합니다. (baseline이 "한 채팅방 안 직전 7일 vs 당일"
-  비교라 합치면 의미가 없음 → 입력별 폴더 분리)
-- 채점 필수는 아닙니다. 코드 + 데이터 + 시드(42)로 Colab에서 그대로 **재현**됩니다.
-- 만드는 법: 노트북을 **Run all** 한 번 하면 `INPUTS_TO_RUN`에 따라 `chat_log1` → `chat_log2`가
-  순서대로 자동 실행되어 각각 `outputs/<입력명>_<시각>/`에 저장됩니다 → 거기서
-  `daily_report.json`(+ `label_review.csv`)을 위 폴더로 복사. (상세: `chat_log_result/README.md`)
+→ 폴더 구조·생성 방법 상세는 [`chat_log_result/README.md`](chat_log_result/README.md) 참고.
 
 ---
 
