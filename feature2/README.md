@@ -119,12 +119,9 @@ feature2/
 | Seed | 42 (transformers set_seed + random_state) |
 | Split | Train 55,447 / Validation 6,931 / Test 6,931 (80:10:10, Stratified) |
 | Model | KoELECTRA-small (3-class) |
-| **Accuracy** | **0.64** |
-| **Macro-F1** | **0.60** |
-| Binary(공격 vs 비공격) | Accuracy 0.8145 / F1 0.8263 |
-
-> 위 수치는 best-epoch(validation) 선택 적용 **이전** 기준입니다.
-> 노트북을 다시 Run all 한 뒤 `result.txt`/`log.txt` 와 위 표를 최신 값으로 갱신하세요.
+| **Accuracy** | **0.6425** |
+| **Macro-F1** | **0.6016** |
+| Binary(공격 vs 비공격) | Accuracy 0.8158 / F1 0.8275 |
 
 - 평가 지표: Accuracy, Macro-F1, Confusion Matrix
 - 상세 결과는 [`result.txt`](result.txt) 참고

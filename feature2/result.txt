@@ -4,40 +4,32 @@
 
 [데이터셋]
 - 출처   : AIHub 텍스트 윤리 검증 데이터셋 (talksets-train-1_aihub.csv)
-- 라벨링 : intensity 점수 기반 3단계 binning
-           intensity < 1.0       -> 비공격(0)
-           1.0 <= intensity < 1.8 -> 약한공격(1)
-           그 외                  -> 강한공격(2)
-- 정제   : 결측/공백/중복 문장 제거 후 69,309개
-
-[데이터 분할] (Stratified Split, 80:10:10)
-- Train      : 55,447
-- Validation : 6,931
-- Test       : 6,931
+- 라벨링 : intensity binning ( <1.0 → 0(비공격) / 1.0~1.8 → 1(약한공격) / ≥1.8 → 2(강한공격) )
+- 정제   : 결측/공백/중복 제거 (클래스 샘플링 생략, 원본 규모 유지)
+- 분할   : Stratified 80:10:10  (Train 55447 / Val 6931 / Test 6931)
 
 [재현성]
 - Seed : 42  (transformers set_seed(42) + random_state=42)
 
 [모델]
-- 메인       : KoELECTRA-small (monologg/koelectra-small-v3-discriminator), 3-class
-- 베이스라인 : TF-IDF + 로지스틱 회귀 (비교용, KoELECTRA와 동일한 Stratified 8:1:1 분할)
+- KoELECTRA-small (monologg/koelectra-small-v3-discriminator), 3-class
+- 선택 : load_best_model_at_end=True (Validation Macro-F1 기준 best epoch)
 
-[최종 성능] (메인 모델 / Test 6,931개)
-- Accuracy : 0.64
-- Macro-F1 : 0.60
-- 비공격(0)  : precision 0.74 / recall 0.88 / f1 0.80
-- 약한공격(1) : precision 0.51 / recall 0.51 / f1 0.51
-- 강한공격(2) : precision 0.61 / recall 0.41 / f1 0.49
+[최종 성능] (Test 6931개, 3-class)
+- Accuracy : 0.6425
+- Macro-F1 : 0.6016
+- 비공격(0)   : precision 0.7380 / recall 0.8789 / f1 0.8024
+- 약한공격(1) : precision 0.5074 / recall 0.5123 / f1 0.5098
+- 강한공격(2) : precision 0.6127 / recall 0.4119 / f1 0.4926
+- Confusion Matrix(행=실제,열=예측) : [[2592, 319, 38], [647, 1127, 426], [273, 775, 734]]
 
-[기능 3 연동용 Binary 지표] (공격 vs 비공격)
-- Accuracy  : 0.8145
-- Precision : 0.8942
-- Recall    : 0.7680
-- F1-Score  : 0.8263
-
-[참고 - 베이스라인(TF-IDF + 로지스틱 회귀)]
-- Accuracy : 0.5501  (메인 모델이 베이스라인보다 우수)
+[기능 3 연동용 Binary 지표] (공격 1·2 vs 비공격 0)
+- Binary Accuracy : 0.8158
+- Binary Precision: 0.8956
+- Binary Recall   : 0.7690
+- Binary F1-Score : 0.8275
 
 [적법성 확인]
-- 학습  : Train + Validation 만 사용
+- 학습  : Train + Validation 만 사용 (Validation Macro-F1 기준 best epoch 채택)
 - 테스트 : 학습 종료 후 Test 로 1회만 측정 (테스트셋 누출 없음)
+- 기록 시각 : 2026-06-09 08:19:54
