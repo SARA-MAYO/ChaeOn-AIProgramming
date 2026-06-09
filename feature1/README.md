@@ -17,12 +17,11 @@
 feature1/
 ├─ sentiment_analysis.ipynb   # 학습 + 평가 전체 코드 (셀 순서대로 실행) — 최종 제출 모델
 ├─ result.txt                 # 사용 시드, 데이터 분할, 최종 metric 기록
-├─ model_selection/           # 모델 선정 비교 실험 (세 후보 비교 — 최종 제출 모델 아님)
-│  ├─ model_selection_experiment.ipynb
-│  ├─ test_result.txt
-│  └─ README.md
-├─ dataset/                   # (참고용 빈 폴더 — 원본은 Colab 세션 /content/ 에 업로드)
-└─ model/                     # (참고용 빈 폴더 — 학습 모델은 /content/ 및 MyDrive 에 저장됨)
+└─ model_selection/           # 모델 선정 비교 실험 (세 후보 비교 — 최종 제출 모델 아님)
+   ├─ model_selection_experiment.ipynb
+   ├─ baseline_tfidf_lr.py
+   ├─ test_result.txt
+   └─ README.md
 ```
 
 > 의존성은 저장소 루트의 `requirements.txt` 하나로 통합되어 있습니다.

@@ -17,12 +17,10 @@
 feature2/
 ├─ aggression_detection.ipynb   # 전처리 + 학습 + 평가 전체 코드 (셀 순서대로 실행) — 최종 제출 모델
 ├─ result.txt                    # 사용 시드, 데이터 분할, 최종 metric 기록
-├─ model_selection/              # 모델 선정 비교 실험 (두 후보 비교 — 최종 제출 모델 아님)
-│  ├─ model_selection_experiment.ipynb
-│  ├─ test_result.txt
-│  └─ README.md
-├─ dataset/                      # (참고용 빈 폴더 — 원본은 Colab 세션 /content/ 에 업로드)
-└─ model/                        # (참고용 빈 폴더 — 학습 모델은 /content/ 및 MyDrive 에 저장됨)
+└─ model_selection/              # 모델 선정 비교 실험 (두 후보 비교 — 최종 제출 모델 아님)
+   ├─ model_selection_experiment.ipynb
+   ├─ test_result.txt
+   └─ README.md
 ```
 
 > 의존성은 저장소 루트의 `requirements.txt` 하나로 통합되어 있습니다.
@@ -47,9 +45,9 @@ feature2/
 | Seed | 42 (transformers set_seed + random_state) |
 | Split | Train 55,447 / Validation 6,931 / Test 6,931 (80:10:10, Stratified) |
 | Model | KoELECTRA-small (3-class) |
-| **Accuracy** | **0.6425** |
-| **Macro-F1** | **0.6016** |
-| Binary(공격 vs 비공격) | Accuracy 0.8158 / F1 0.8275 |
+| **Accuracy** | **0.6432** |
+| **Macro-F1** | **0.6026** |
+| Binary(공격 vs 비공격) | Accuracy 0.8156 / F1 0.8273 |
 
 - 평가 지표: Accuracy, Macro-F1, Confusion Matrix · 상세는 [`result.txt`](result.txt)
 - 데이터셋·전처리 상세: 루트 [`../README.md`](../README.md) 의 데이터셋 섹션
