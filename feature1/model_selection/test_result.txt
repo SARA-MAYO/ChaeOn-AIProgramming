@@ -6,13 +6,17 @@
 - 분할  : Stratified 8:1:1 (seed=42)  Train 11742 / Val 1468 / Test 1468
 - 지표  : Accuracy, Macro-F1  (동일 Test 1468개로 1회 측정)
 
+[베이스라인]  (재현 스크립트: baseline_tfidf_lr.py)
+- TF-IDF(max_features=5000) + 로지스틱회귀(max_iter=1000, seed=42)
+- 후보들과 동일한 Train/Test 사용     Accuracy 0.8903 / Macro-F1 0.8903
+
 [후보별 성능]
 - 후보1) KLUE-RoBERTa 단독         Accuracy 0.9693 / Macro-F1 0.9693
 - 후보2) KcELECTRA + SVM 7:3     Accuracy 0.9707 / Macro-F1 0.9707
 - 후보3) KcELECTRA + Bi-LSTM 7:3 Accuracy 0.9700 / Macro-F1 0.9700
 
 [최종 선정] 후보2) KcELECTRA + SVM 7:3  (Macro-F1 0.9707 / Accuracy 0.9707)
-- 선정 기준: 세 후보가 근소하여 가장 높은 Macro-F1 채택
+- 선정 기준: 베이스라인(0.8903) 대비 후보 모두 0.97대로 향상, 그중 가장 높은 Macro-F1 채택
 - 정식 학습·평가: sentiment_analysis.ipynb (result.txt)
 
 [적법성] 학습=Train만 / 모델선택=Validation / 측정=Test 1회 (테스트셋 누출 없음)
