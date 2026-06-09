@@ -12,8 +12,12 @@
 
 ```
 feature1/
-├─ sentiment_analysis.ipynb   # 학습 + 평가 전체 코드 (셀 순서대로 실행)
+├─ sentiment_analysis.ipynb   # 학습 + 평가 전체 코드 (셀 순서대로 실행) — 최종 제출 모델
 ├─ result.txt                 # 사용 시드, 데이터 분할, 최종 metric 기록
+├─ model_selection/           # 모델 선정 비교 실험 (세 후보 비교 — 최종 제출 모델 아님)
+│  ├─ model_selection_experiment.ipynb
+│  ├─ test_result.txt
+│  └─ README.md
 ├─ dataset/                   # (참고용 빈 폴더 — 원본은 Colab 세션 /content/ 에 업로드)
 └─ model/                     # (참고용 빈 폴더 — 학습 모델은 /content/ 및 MyDrive 에 저장됨)
 ```
@@ -32,6 +36,7 @@ feature1/
 
 - Colab 기본 런타임 (Python 3) 기준
 - 학습에는 **GPU 런타임 권장**
+- 이 노트북은 Colab 전용 기능(드라이브 마운트·세션 업로드)을 사용하므로 **로컬에서는 그대로 실행되지 않습니다.** Colab에서 실행해 주세요.
 
 ---
 
@@ -39,7 +44,7 @@ feature1/
 
 본 기능은 **AIHub 감성대화 말뭉치** 원본을 사용합니다.
 
-> ⚠️ 원본 데이터는 AIHub 라이선스(로그인·이용 신청 필요, 재배포 제한)상 **저장소에 포함하지 않습니다.**
+> 원본 데이터는 AIHub 라이선스(로그인·이용 신청 필요, 재배포 제한)상 **저장소에 포함하지 않습니다.**
 > 제출물과 함께 **원본 파일을 직접 전달**하며, AIHub에서 직접 받을 수도 있습니다.
 
 **배치 방법** — 아래 두 파일을 **Colab 세션(`/content/`)** 에 업로드합니다. (노트북이 읽는 이름과 정확히 같아야 함)
@@ -74,7 +79,7 @@ feature1/
 실행하면 학습 → Test 평가 → 앙상블 추론까지 진행되고,
 **Accuracy / Macro-F1 / Confusion Matrix** 와 예시 10개가 출력됩니다.
 
-> 🔗 **기능 3 연동**: 마지막 셀이 산출물을 **본인 구글 드라이브의 `MyDrive/feature1/` 폴더**에 모아 자동 저장합니다.
+> **기능 3 연동**: 마지막 셀이 산출물을 **본인 구글 드라이브의 `MyDrive/feature1/` 폴더**에 모아 자동 저장합니다.
 > (`chaeon_feature1_checkpoint/`, `svm_model.pkl`, `vectorizer.pkl`, `result.txt`, `log.txt`)
 > 기능 3 노트북이 이 경로를 그대로 읽으므로 별도 작업이 필요 없습니다. (드라이브 인증 클릭만)
 

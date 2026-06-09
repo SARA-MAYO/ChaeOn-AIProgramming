@@ -12,8 +12,12 @@
 
 ```
 feature2/
-├─ aggression_detection.ipynb   # 전처리 + 학습 + 평가 전체 코드 (셀 순서대로 실행)
+├─ aggression_detection.ipynb   # 전처리 + 학습 + 평가 전체 코드 (셀 순서대로 실행) — 최종 제출 모델
 ├─ result.txt                    # 사용 시드, 데이터 분할, 최종 metric 기록
+├─ model_selection/              # 모델 선정 비교 실험 (두 후보 비교 — 최종 제출 모델 아님)
+│  ├─ model_selection_experiment.ipynb
+│  ├─ test_result.txt
+│  └─ README.md
 ├─ dataset/                      # (참고용 빈 폴더 — 원본은 Colab 세션 /content/ 에 업로드)
 └─ model/                        # (참고용 빈 폴더 — 학습 모델은 /content/ 및 MyDrive 에 저장됨)
 ```
@@ -32,6 +36,7 @@ feature2/
 
 - Colab 기본 런타임 (Python 3) 기준
 - 학습에는 **GPU 런타임 권장**
+- 이 노트북은 Colab 전용 기능(드라이브 마운트·세션 업로드)을 사용하므로 **로컬에서는 그대로 실행되지 않습니다.** Colab에서 실행해 주세요.
 
 ---
 
@@ -39,13 +44,13 @@ feature2/
 
 본 기능은 **AIHub 텍스트 윤리 검증 데이터셋** 원본을 사용합니다.
 
-> ⚠️ 원본 데이터는 AIHub 라이선스(로그인·이용 신청 필요, 재배포 제한)상 **저장소에 포함하지 않습니다.**
+> 원본 데이터는 AIHub 라이선스(로그인·이용 신청 필요, 재배포 제한)상 **저장소에 포함하지 않습니다.**
 > 제출물과 함께 **원본 파일을 직접 전달**하며, AIHub에서 직접 받을 수도 있습니다.
 
 **배치 방법** — 원본 파일을 **Colab 세션(`/content/`)** 에 업로드하되,
 파일명은 노트북이 읽는 이름과 정확히 같아야 합니다.
 
-- `talksets-train-1_aihub.csv`  ← 노트북이 읽는 이름 (AIHub 원본 파일명 그대로)
+- `talksets-train-1_aihub.csv` ← 노트북이 읽는 이름 (AIHub 원본 파일명 그대로)
 
 원본을 AIHub에서 직접 받는 경우: https://www.aihub.or.kr/
 (정확한 데이터셋 페이지는 `../datasets/dataset_information.md` 참고)
@@ -78,7 +83,7 @@ feature2/
 
 실행 순서: 환경설정 → 데이터 확인 → 전처리 → KoELECTRA 학습·평가 → TF-IDF 베이스라인 비교
 
-> 🔗 **기능 3 연동**: 마지막 셀이 산출물을 **본인 구글 드라이브의 `MyDrive/feature2/` 폴더**에 모아 자동 저장합니다.
+> **기능 3 연동**: 마지막 셀이 산출물을 **본인 구글 드라이브의 `MyDrive/feature2/` 폴더**에 모아 자동 저장합니다.
 > (`chaeon_feature2_model/`, `result.txt`, `log.txt`) 기능 3 노트북이 이 경로를 그대로 읽으므로
 > 별도 작업이 필요 없습니다. (드라이브 인증 클릭만)
 
@@ -118,7 +123,7 @@ feature2/
 | **Macro-F1** | **0.60** |
 | Binary(공격 vs 비공격) | Accuracy 0.8145 / F1 0.8263 |
 
-> ⚠️ 위 수치는 best-epoch(validation) 선택 적용 **이전** 기준입니다.
+> 위 수치는 best-epoch(validation) 선택 적용 **이전** 기준입니다.
 > 노트북을 다시 Run all 한 뒤 `result.txt`/`log.txt` 와 위 표를 최신 값으로 갱신하세요.
 
 - 평가 지표: Accuracy, Macro-F1, Confusion Matrix

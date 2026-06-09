@@ -1,6 +1,6 @@
 # CHAEON - AI Programming Project
 
-## 🚀 빠른 시작 (이것만 따라 하면 됩니다)
+## 빠른 시작 (이것만 따라 하면 됩니다)
 
 모든 모델은 **본인 구글 드라이브(MyDrive)** 를 통해 자동 연동됩니다.
 파일 이동·이름 변경·경로 수정·수동 복사가 **전혀 없습니다.**
@@ -12,7 +12,7 @@
 3. **기능 3** — `feature3/colab_feature3_member1.ipynb` 를 Colab에서 열고 **Run all**
    → 저장소 자동 clone → 기능1·2 모델을 드라이브에서 **자동 로드** → 원문→기능1→기능2→기능3 날짜별 분석 → 최종 `daily_report.json` 생성
 
-> - 추가로 필요한 사람 작업: **구글 드라이브 인증 클릭**, 그리고 기능1·2의 **AIHub 원본 데이터 업로드**(라이선스상 자동 다운로드 불가)뿐입니다.
+> - 추가로 필요한 사람 작업: **구글 드라이브 인증 클릭**, 그리고 기능1·2의 **데이터 파일 업로드**(제출물과 함께 별도 전달 — 라이선스상 저장소에 미포함)뿐입니다.
 > - 기능 3은 시작 시 위 4개 파일이 드라이브에 있는지 **자동 검사**하고, 없으면 **어떤 파일이 부족한지 안내 후 종료**합니다. (해당 기능 노트북을 먼저 Run all 하면 됨)
 > - GPU·모델 없이 기능 3 로직만 빠르게 보려면: `cd feature3 && python state_change_analysis.py` (자세한 내용은 [`feature3/README.md`](feature3/README.md))
 
@@ -73,16 +73,24 @@ CHAEON-AIPROGRAMMING
 ├── requirements.txt
 │
 ├── feature1
-│   ├── sentiment_analysis.ipynb
+│   ├── sentiment_analysis.ipynb        # 최종 제출 모델 (학습+평가)
 │   ├── README.md
 │   ├── result.txt
+│   ├── model_selection/                # 모델 선정 비교 실험 (세 후보 비교)
+│   │   ├── model_selection_experiment.ipynb
+│   │   ├── test_result.txt
+│   │   └── README.md
 │   ├── dataset/
 │   └── model/
 │
 ├── feature2
-│   ├── aggression_detection.ipynb
+│   ├── aggression_detection.ipynb      # 최종 제출 모델 (학습+평가)
 │   ├── README.md
 │   ├── result.txt
+│   ├── model_selection/                # 모델 선정 비교 실험 (두 후보 비교)
+│   │   ├── model_selection_experiment.ipynb
+│   │   ├── test_result.txt
+│   │   └── README.md
 │   ├── dataset/
 │   └── model/
 │
@@ -141,14 +149,24 @@ AIHub 텍스트 윤리 검증 데이터셋 사용
   - 결과(익명화 완료): `feature3/chat_log1_raw.json`, `feature3/chat_log2_raw.json`
   - 자세한 변환 방법은 [`feature3/README.md`](feature3/README.md) 참고
 
-> ⚠️ 저장소에 포함된 채팅 로그는 **익명화·PII 마스킹을 마친 데이터**이며, 원본(가명화 전) 로그는 포함하지 않습니다.
+> 저장소에 포함된 채팅 로그는 **익명화·PII 마스킹을 마친 데이터**이며, 원본(가명화 전) 로그는 포함하지 않습니다.
 
 ---
 
-# 실행 환경
+# 실행 환경 (권장 작업 방식)
 
-- **Google Colab 기준** (Python 3 런타임)
-- 학습 시 **GPU 런타임 권장** (런타임 → 런타임 유형 변경 → 하드웨어 가속기: GPU)
+본 프로젝트는 **Google Colab 환경에서 실행하는 것을 기준**으로 작성되었습니다.
+
+| 구분 | 실행 환경 | 비고 |
+|---|---|---|
+| 기능 1 학습·평가 | **Google Colab 필수** | 구글 드라이브 마운트·세션 업로드(`/content/`)·GPU 사용을 전제로 작성됨 |
+| 기능 2 학습·평가 | **Google Colab 필수** | 〃 |
+| 기능 3 통합 실행 | **Google Colab 필수** | 기능1·2 모델을 드라이브에서 로드 |
+| 기능 3 로직 단독 확인 | 로컬 Python 가능 | `python feature3/state_change_analysis.py` (GPU·드라이브·모델 불필요) |
+
+- 학습(기능 1·2)에는 **GPU 런타임 권장** (런타임 → 런타임 유형 변경 → 하드웨어 가속기: GPU)
+- 기능 1·2·3 통합 노트북은 Colab 전용 기능(`google.colab`, 드라이브 마운트)을 사용하므로 **로컬에서는 그대로 실행되지 않습니다.** 채점·재현 시 Colab에서 실행해 주세요.
+- 데이터·GPU 없이 기능 3의 분석 로직만 빠르게 보려면 위 표의 마지막 항목(로컬 단독 실행)을 사용하세요.
 
 # 실행 순서 (Run all 3번)
 
@@ -164,8 +182,8 @@ AIHub 텍스트 윤리 검증 데이터셋 사용
 > 기능 3은 첫 셀에서 저장소를 자동 clone하고, 시작 시 기능1·2 모델 4개 파일이 Drive에 있는지 검사합니다.
 > 없으면 **어떤 파일이 부족한지 안내하고 멈춥니다.** (해당 기능 노트북을 먼저 Run all 하면 됨)
 >
-> ⚠️ 단, 기능 1·2의 **AIHub 원본 데이터**는 라이선스(로그인·재배포 제한)상 자동 다운로드가 불가하여,
-> Colab 세션(`/content/`)에 직접 업로드하는 단계만 남습니다. (데이터 배치법: 각 기능 README 2번 항목)
+> 단, 기능 1·2의 **데이터 파일**은 라이선스(로그인·재배포 제한)상 저장소에 포함하지 않으므로 **제출물과 함께 별도로 전달**하며,
+> Colab 세션(`/content/`)에 직접 업로드하는 단계만 남습니다. (원본 출처는 AIHub — 데이터 배치법·링크: 각 기능 README 2번 항목)
 
 - 각 기능 상세 실행법: [`feature1/README.md`](feature1/README.md), [`feature2/README.md`](feature2/README.md), [`feature3/README.md`](feature3/README.md) 참고
 
@@ -181,8 +199,8 @@ AIHub 텍스트 윤리 검증 데이터셋 사용
 
 코드 제출 파일
 
-- 기능1 학습 코드
-- 기능2 학습 코드
+- 기능1 학습 코드 (+ 모델 선정 비교 실험 `feature1/model_selection/`)
+- 기능2 학습 코드 (+ 모델 선정 비교 실험 `feature2/model_selection/`)
 - 기능3 코드
 - 실행 설명서(README)
 - requirements.txt

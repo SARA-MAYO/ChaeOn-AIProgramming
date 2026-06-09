@@ -142,10 +142,10 @@ python state_change_analysis.py
 
 ### 입력 / 출력
 
-| 입력 CSV (원본)                         | 전처리 코드                  | 출력 JSON (결과물)        |
+| 입력 CSV (원본) | 전처리 코드 | 출력 JSON (결과물) |
 | --------------------------------------- | ---------------------------- | ------------------------- |
-| `../.데이터셋/cleaned_chat_log1.csv`    | `preprocess_chat_log.py`     | `chat_log1_raw.json`      |
-| `../.데이터셋/cleaned_chat_log2.csv`    | `preprocess_chat_log.py`     | `chat_log2_raw.json`      |
+| `../.데이터셋/cleaned_chat_log1.csv` | `preprocess_chat_log.py` | `chat_log1_raw.json` |
+| `../.데이터셋/cleaned_chat_log2.csv` | `preprocess_chat_log.py` | `chat_log2_raw.json` |
 
 - 입력 CSV 컬럼: `timestamp, sender_id, message`
 - `sender_id`는 원본이 이미 `User_A`~`User_D`로 가명화되어 있습니다.
