@@ -1,235 +1,214 @@
-# CHAEON - AI Programming Project
+# 채온(CHAEON) — AI Programming Project
 
-## 빠른 시작 (이것만 따라 하면 됩니다)
+> 명지대학교 AI프로그래밍 팀 프로젝트 / 팀명: 채온(CHAEON)
+> 팀 단체 채팅 로그의 **감정·공격성**을 분석해 구성원의 **커뮤니케이션 상태 변화를 조기 탐지**하는 AI 시스템.
 
-모든 모델은 **본인 구글 드라이브(MyDrive)** 를 통해 자동 연동됩니다.
-파일 이동·이름 변경·경로 수정·수동 복사가 **전혀 없습니다.**
-
-1. **기능 1** — `feature1/sentiment_analysis.ipynb` 를 Colab에서 열고, AIHub 감성대화 데이터 업로드 후 **런타임 → 모두 실행(Run all)**
-   → 학습 결과가 `MyDrive/feature1/` 폴더(모델 + `result.txt` + `log.txt`)로 **자동 저장**
-2. **기능 2** — `feature2/aggression_detection.ipynb` 를 Colab에서 열고, AIHub 윤리검증 데이터 업로드 후 **Run all**
-   → 학습 결과가 `MyDrive/feature2/` 폴더(모델 + `result.txt` + `log.txt`)로 **자동 저장**
-3. **기능 3** — `feature3/colab_feature3_member1.ipynb` 를 Colab에서 열고 **Run all**
-   → 저장소 자동 clone → 기능1·2 모델을 드라이브에서 **자동 로드** → 원문→기능1→기능2→기능3 날짜별 분석 → 최종 `daily_report.json` 생성
-
-> - 추가로 필요한 사람 작업: **구글 드라이브 인증 클릭**, 그리고 기능1·2의 **데이터 파일 업로드**(제출물과 함께 별도 전달 — 라이선스상 저장소에 미포함)뿐입니다.
-> - 기능 3은 시작 시 위 4개 파일이 드라이브에 있는지 **자동 검사**하고, 없으면 **어떤 파일이 부족한지 안내 후 종료**합니다. (해당 기능 노트북을 먼저 Run all 하면 됨)
-> - GPU·모델 없이 기능 3 로직만 빠르게 보려면: `cd feature3 && python state_change_analysis.py` (자세한 내용은 [`feature3/README.md`](feature3/README.md))
+이 README 하나로 **환경 세팅 → 데이터 배치 → 실행 → 결과 확인**을 끝까지 따라 할 수 있습니다.
 
 ---
 
-## 프로젝트 개요
+## 실행 환경 (먼저 읽어 주세요)
 
-채온(CHAEON)은 팀 프로젝트 채팅 로그를 분석하여
-커뮤니케이션 악화 가능성을 조기에 탐지하는 AI 시스템입니다.
-
-본 프로젝트는 다음 3개 기능으로 구성됩니다.
-
-### 기능 1 - 감정 분석
-
-채팅 메시지를 긍정 / 부정으로 분류
-
-- 입력: 채팅 메시지
-- 출력: positive(1) / negative(0)
-- 모델: KcELECTRA + SVM(TF-IDF) Soft Voting 앙상블 (7:3)
+- 본 프로젝트는 **Google Colab 전용**으로 설계되었습니다.
+  드라이브 마운트·세션 업로드(`/content/`)·GPU 사용을 전제로 작성되어 **로컬 PC / 가상환경(venv)에서는 실행되지 않습니다.**
+  채점·재현은 **반드시 Google Colab에서** 진행해 주세요.
+- 학습(기능 1·2)에는 **GPU 런타임 권장**: 런타임 → 런타임 유형 변경 → 하드웨어 가속기: **GPU(T4 등)**
+- 사람이 직접 하는 일은 3가지뿐입니다 → **① 데이터 업로드  ② 구글 드라이브 인증 클릭  ③ Run all**
 
 ---
 
-### 기능 2 - 공격성 탐지
+## 실행 순서 (Colab에서 Run all 3번)
 
-채팅 메시지의 공격성 수준을 분류
+반드시 **기능 1 → 기능 2 → 기능 3 순서**로 실행합니다.
+(기능 3은 기능 1·2가 **드라이브에 저장한 모델**을 불러와 동작하므로, 먼저 돌리지 않으면 멈춥니다.)
 
-- 입력: 채팅 메시지
-- 출력: 0(비공격) / 1(약공격) / 2(강공격)
-- 모델: KoELECTRA-small (+ TF-IDF 로지스틱 회귀 비교 베이스라인)
+| 순서 | 노트북 | Colab에서 열기 | 할 일 | 자동으로 일어나는 것 |
+|---|---|---|---|---|
+| 1 | `feature1/sentiment_analysis.ipynb` | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SARA-MAYO/ChaeOn-AIProgramming/blob/main/feature1/sentiment_analysis.ipynb) | 데이터 업로드 후 **Run all** | 학습 → `MyDrive/feature1/` 에 모델 + `result.txt` + `log.txt` 자동 저장 |
+| 2 | `feature2/aggression_detection.ipynb` | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SARA-MAYO/ChaeOn-AIProgramming/blob/main/feature2/aggression_detection.ipynb) | 데이터 업로드 후 **Run all** | 학습 → `MyDrive/feature2/` 에 모델 + `result.txt` + `log.txt` 자동 저장 |
+| 3 | `feature3/colab_feature3_member1.ipynb` | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SARA-MAYO/ChaeOn-AIProgramming/blob/main/feature3/colab_feature3_member1.ipynb) | **Run all** (업로드할 데이터 없음) | 저장소 자동 clone → 기능1·2 모델 드라이브에서 자동 로드 → 원문→기능1→기능2→기능3 날짜별 분석 → `daily_report.json` 생성 |
 
----
-
-### 기능 3 - 상태 변화 분석
-
-기능 1, 2 결과를 이용하여 사용자의 상태 변화를 분석
-
-분석 항목
-
-- 부정 감정 변화
-- 공격성 변화
-- 참여량 변화
-
-최종 결과
-
-- 🟢 평소와 비슷
-- 🟡 평소와 조금 다름
-- 🟠 평소와 꽤 다름
-- ⚪ 데이터 부족
+> 위 **Open In Colab** 배지를 누르면 노트북이 Colab에서 바로 열립니다. (다운로드·업로드 불필요)
+> 기능 3은 시작 시 기능 1·2 모델이 드라이브에 있는지 **자동 검사**하고, 없으면 **어떤 파일이 부족한지 안내하고 멈춥니다.** → 해당 기능 노트북을 먼저 Run all 하세요.
 
 ---
 
-# 저장소 구조
+## 0단계 — 데이터 파일 배치 (별도 전달, 저장소에 없음)
+
+아래 데이터는 라이선스(로그인·재배포 제한)·개인정보 문제로 **GitHub에 포함하지 않으며, 제출물과 함께 별도로 전달**합니다.
+기능 1·2 노트북을 연 뒤 **Colab 세션(`/content/`)에 업로드**하세요. (파일명이 노트북이 읽는 이름과 정확히 같아야 합니다.)
+
+| 전달 파일명 | 사용 기능 | 두는 위치 | 비고 |
+|---|---|---|---|
+| `감성대화말뭉치(최종데이터)_Training.xlsx` | 기능 1 | Colab `/content/` 에 업로드 | 필수 |
+| `감성대화말뭉치(최종데이터)_Validation.xlsx` | 기능 1 | Colab `/content/` 에 업로드 | 필수 |
+| `talksets-train-1_aihub.csv` | 기능 2 | Colab `/content/` 에 업로드 | 필수 |
+| `chat_log1_raw.json`, `chat_log2_raw.json` | 기능 3 | 이미 `feature3/`에 포함 | 업로드 불필요 |
+
+- **업로드 방법(Colab):** 왼쪽 파일 영역(폴더 아이콘) → 드래그&드롭, 또는 우클릭 → 업로드.
+  (Colab 세션이 끊기면 업로드 파일은 사라지므로, 그 기능을 다시 돌릴 땐 재업로드합니다.)
+- **원본 출처(AIHub):** https://www.aihub.or.kr/ — 데이터셋 상세·전처리는 아래 [데이터셋](#데이터셋) 및 [`datasets/dataset_information.md`](datasets/dataset_information.md) 참고.
+- **기능 3 입력**(`chat_log1_raw.json`, `chat_log2_raw.json`)은 익명화·PII 마스킹을 마친 JSON으로 **이미 저장소에 포함**되어 있어 추가 업로드가 필요 없습니다.
+
+---
+
+## 단계별 상세 (Colab)
+
+### 1) 기능 1 — 감정 분석  `feature1/sentiment_analysis.ipynb`
+1. Colab에서 열기 → 런타임 유형 **GPU(T4)** 설정
+2. `감성대화말뭉치(최종데이터)_Training.xlsx`, `..._Validation.xlsx`를 `/content/`에 업로드
+3. **런타임 → 모두 실행(Run all)**
+4. 학습 → Test 평가 → 앙상블 추론이 진행되고 **Accuracy / Macro-F1 / Confusion Matrix**가 출력됩니다.
+5. 산출물이 **`MyDrive/feature1/`** 에 자동 저장: `chaeon_feature1_checkpoint/`, `svm_model.pkl`, `vectorizer.pkl`, `result.txt`, `log.txt`
+
+### 2) 기능 2 — 공격성 탐지  `feature2/aggression_detection.ipynb`
+1. Colab에서 열기 → **GPU(T4)** 설정
+2. `talksets-train-1_aihub.csv`를 `/content/`에 업로드
+3. **Run all** → 전처리 → KoELECTRA 학습·평가 → TF-IDF 베이스라인 비교
+4. 산출물이 **`MyDrive/feature2/`** 에 자동 저장: `chaeon_feature2_model/`, `result.txt`, `log.txt`
+
+### 3) 기능 3 — 상태 변화 분석  `feature3/colab_feature3_member1.ipynb`
+1. Colab에서 열기 → **Run all** (업로드할 데이터 없음)
+2. 자동으로: 저장소 clone → 드라이브 인증 클릭 → 기능 1·2 모델 자동 로드
+   → 실제 채팅(`chat_log1_raw.json`) → 기능 1·2 라벨링 → 기능 3 날짜별 분석
+3. 결과: **`daily_report.json` 생성** + 화면에 날짜별 × 발신자별 상태 표·해석 시각화
+
+> **자주 묻는 문제**
+> - *기능 3이 "모델이 없다"며 멈춰요* → 기능 1·2 노트북을 먼저 **Run all** 해 드라이브에 모델을 만든 뒤 다시 실행하세요.
+> - *드라이브 인증 창이 떠요* → 본인 구글 계정으로 **허용**을 누르면 됩니다. (모델 저장·로드에 필요)
+> - *업로드한 데이터가 사라졌어요* → Colab 세션이 끊기면 `/content/` 업로드 파일은 삭제됩니다. 다시 돌릴 때 재업로드하세요.
+
+---
+
+## 실행하면 생성되는 파일
+
+> 모델·체크포인트 등 용량 큰 산출물은 **코드 실행 시 재생성**되므로 제출 필수는 아닙니다.
+> 재현에 꼭 필요한 것은 **코드 + 데이터 + 시드(42)** 입니다.
+
+| 기능 | 파일 | 위치 | 내용 |
+|---|---|---|---|
+| 1 | `chaeon_feature1_checkpoint/`, `svm_model.pkl`, `vectorizer.pkl` | `MyDrive/feature1/` | 기능 3이 불러올 모델 |
+| 1 | `result.txt`, `log.txt` | `MyDrive/feature1/` | 시드·최종 metric / 실행 로그 |
+| 2 | `chaeon_feature2_model/` | `MyDrive/feature2/` | 기능 3이 불러올 모델 |
+| 2 | `result.txt`, `log.txt` | `MyDrive/feature2/` | 시드·최종 metric / 실행 로그 |
+| 3 | `daily_report.json` | `MyDrive/feature3_outputs/<입력명>_<실행시각>/` | **날짜별 × 발신자별 상태 리포트 (최종 산출물)** |
+| 3 | `labeled.json`, `label_review.csv/.txt` | 〃 | 기능1·2 라벨링 결과 / 라벨 검수 |
+
+---
+
+## 데이터셋
+
+### 기능 1 — 감정 분석
+- **출처**: AIHub 감성대화 말뭉치 (https://www.aihub.or.kr/)
+- **전처리**(노트북 실행 중 자동 수행): `기쁨` → 긍정(1) / 그 외 감정 → 부정(0), `text` 기준 중복 제거(누출 방지), 1:1 다운샘플링(seed=42), Stratified 8:1:1 분할(seed=42)
+
+### 기능 2 — 공격성 탐지
+- **출처**: AIHub 텍스트 윤리 검증 데이터셋 (https://www.aihub.or.kr/)
+- **전처리**(노트북 실행 중 자동 수행): intensity 점수 → 3단계 라벨링 (`<1.0`→0 / `1.0~1.8`→1 / `≥1.8`→2), 결측·공백·중복 제거, Stratified 8:1:1 분할(seed=42)
+
+### 기능 3 — 상태 변화 분석 (실제 채팅 로그)
+- **출처**: 팀원의 지인이 진행한 **실제 카카오톡 단체 채팅** (팀원을 통해 전달받음)
+- **동의**: 데이터를 제공한 지인을 통해 **익명화 전제 사용 동의**를 확인했습니다.
+- **익명화·전처리**(`feature3/preprocess_chat_log.py`): 발신자 `User_A`~`User_D` 가명화 · 전화번호/이메일/계좌 등 **PII 마스킹** · 이모티콘/사진/시스템 표기 제거 · timestamp ISO 8601(KST) 변환
+- **결과물**(익명화 완료, 저장소 포함): `feature3/chat_log1_raw.json`, `feature3/chat_log2_raw.json`
+
+> 저장소에 포함된 채팅 로그는 **익명화·PII 마스킹을 마친 데이터**이며, 원본(가명화 전) 로그는 포함하지 않습니다.
+> 데이터셋 상세는 [`datasets/dataset_information.md`](datasets/dataset_information.md) 참고.
+
+---
+
+## 재현성 & 적법성 (테스트셋 누출 방지)
+
+| 항목 | 값 |
+|---|---|
+| Seed | 42 (random / numpy / torch / transformers) |
+| 분할 | Train / Validation / Test = 80 / 10 / 10 (Stratified) |
+| 평가 지표 | Accuracy, Macro-F1, Confusion Matrix |
+
+- **학습**: 기능 1·2 모두 **Train + Validation 만** 사용 (Test 누출 없음)
+- **모델 선택**: **Validation 기준** 가장 좋은 모델 채택 (`load_best_model_at_end=True`)
+- **테스트**: 학습 종료 후 **Test 로 1회만** 측정
+- **기능 3**: 별도 학습이 없으며 학습/검증/테스트셋을 사용하지 않습니다. (규칙 기반 분석)
+- 상세 결과: `feature1/result.txt`, `feature2/result.txt`, 각 `featureN/README.md`
+
+---
+
+## 프로젝트 개요 (기능 설명)
+
+### 기능 1 — 감정 분석
+채팅 메시지를 긍정/부정으로 분류
+- 입력: 채팅 메시지 → 출력: positive(1) / negative(0)
+- 모델: **KcELECTRA + SVM(TF-IDF) Soft Voting 앙상블 (7:3)**
+
+### 기능 2 — 공격성 탐지
+채팅 메시지의 공격성 수준을 3단계로 분류
+- 입력: 채팅 메시지 → 출력: 0(비공격) / 1(약한공격) / 2(강한공격)
+- 모델: **KoELECTRA-small** (+ TF-IDF 로지스틱 회귀 비교 베이스라인)
+
+### 기능 3 — 상태 변화 분석
+기능 1·2 결과로 사용자의 상태 변화를 분석 (부정 감정 / 공격성 / 참여량 변화)
+- 분석 당일 vs 직전 7일 baseline 비교 → 상태 판정
+- 최종 결과: 🟢 평소와 비슷 / 🟡 평소와 조금 다름 / 🟠 평소와 꽤 다름 / ⚪ 데이터 부족
+
+---
+
+## 저장소 구조
 
 ```
 CHAEON-AIPROGRAMMING
 │
-├── README.md
+├── README.md                            # 본 문서 (실행 설명서)
 ├── requirements.txt
 │
 ├── feature1
-│   ├── sentiment_analysis.ipynb        # 최종 제출 모델 (학습+평가)
-│   ├── README.md
-│   ├── result.txt
-│   ├── model_selection/                # 모델 선정 비교 실험 (세 후보 비교)
-│   │   ├── model_selection_experiment.ipynb
-│   │   ├── test_result.txt
-│   │   └── README.md
-│   ├── dataset/
-│   └── model/
+│   ├── sentiment_analysis.ipynb         # 최종 제출 모델 (학습+평가)
+│   ├── README.md · result.txt
+│   └── model_selection/                 # 모델 선정 비교 실험 (세 후보)
 │
 ├── feature2
-│   ├── aggression_detection.ipynb      # 최종 제출 모델 (학습+평가)
-│   ├── README.md
-│   ├── result.txt
-│   ├── model_selection/                # 모델 선정 비교 실험 (두 후보 비교)
-│   │   ├── model_selection_experiment.ipynb
-│   │   ├── test_result.txt
-│   │   └── README.md
-│   ├── dataset/
-│   └── model/
+│   ├── aggression_detection.ipynb       # 최종 제출 모델 (학습+평가)
+│   ├── README.md · result.txt
+│   └── model_selection/                 # 모델 선정 비교 실험 (두 후보)
 │
 ├── feature3
-│   ├── README.md
-│   ├── state_change_analysis.py     # 지표 계산 + 상태 판정 + 날짜별 리포트 생성
-│   ├── preprocess_chat_log.py       # 카카오톡 CSV → 입력 JSON 변환 + 익명화
-│   ├── colab_feature3_member1.ipynb # 기능1·2 모델 → 기능3 통합 시연 노트북
-│   ├── chat_log1_raw.json           # 실데이터 입력 (전처리·익명화 완료)
-│   ├── chat_log2_raw.json           # 실데이터 입력 (전처리·익명화 완료)
-│   ├── sample_chat_log.json         # 라벨 붙은 입력 (단독 실행용)
-│   └── daily_report.json            # 산출물 — 날짜별 상태 리포트 (실행 시 생성)
+│   ├── colab_feature3_member1.ipynb     # 기능1·2 모델 → 기능3 통합 노트북
+│   ├── state_change_analysis.py         # 기능3 엔진 (지표·상태 판정·리포트)
+│   ├── preprocess_chat_log.py           # 카카오톡 CSV → 입력 JSON 변환·익명화
+│   ├── chat_log1_raw.json · chat_log2_raw.json   # 실데이터 (익명화 완료)
+│   └── README.md
 │
 ├── docs
 │   └── 기능3_설계결과_보고서.pdf
-│
 └── datasets
     └── dataset_information.md
 ```
 
----
-
-# 데이터셋
-
-## 기능 1
-
-AIHub 감성대화 데이터셋 사용
-
-전처리
-
-- 기쁨 → 긍정(1)
-- 나머지 감정 → 부정(0)
-
-## 기능 2
-
-AIHub 텍스트 윤리 검증 데이터셋 사용
-
-전처리
-
-- intensity < 1.0 → 0 (비공격)
-- 1.0 ≤ intensity < 1.8 → 1 (약한공격)
-- intensity ≥ 1.8 → 2 (강한공격)
-
-## 기능 3 (실제 채팅 로그)
-
-기능 3의 입력으로 사용한 채팅 로그는 **팀원의 지인으로부터 전달받은 실제 카카오톡 단체 채팅** 대화입니다.
-
-- **출처**: 팀원의 지인이 실제로 진행한 카카오톡 단체 채팅 (팀원을 통해 전달받음)
-- **동의**: 데이터를 제공한 지인을 통해 **익명화를 전제로 한 데이터 사용 동의**를 확인했습니다.
-- **익명화·전처리**: 전달받은 원본 로그는 공개 전 다음 전처리를 거쳐 개인정보를 제거했습니다.
-  - 발신자는 `User_A`~`User_D` 형태로 **가명화**
-  - 전화번호·주민번호·이메일·링크·계좌/카드번호 등 **PII 마스킹**(`[전화번호]`, `[이메일]`, `[번호]` 등)
-  - 이모티콘·사진·동영상 등 미디어/시스템 표기(placeholder) 제거
-- **전처리 코드·결과물**:
-  - 코드: `feature3/preprocess_chat_log.py`
-  - 결과(익명화 완료): `feature3/chat_log1_raw.json`, `feature3/chat_log2_raw.json`
-  - 자세한 변환 방법은 [`feature3/README.md`](feature3/README.md) 참고
-
-> 저장소에 포함된 채팅 로그는 **익명화·PII 마스킹을 마친 데이터**이며, 원본(가명화 전) 로그는 포함하지 않습니다.
+- 각 기능 상세 실행법: [`feature1/README.md`](feature1/README.md) · [`feature2/README.md`](feature2/README.md) · [`feature3/README.md`](feature3/README.md)
 
 ---
 
-# 실행 환경 (권장 작업 방식)
+## (옵션) 모델 선정 비교 실험 재현
 
-본 프로젝트는 **Google Colab 환경에서 실행하는 것을 기준**으로 작성되었습니다.
+각 기능의 최종 모델을 어떻게 골랐는지(후보 비교 → 선정)를 재현하려면 아래 노트북을 Colab(GPU)에서 실행합니다.
+**채점 필수는 아니며**, 최종 모델의 정식 학습·평가는 위 `sentiment_analysis.ipynb` / `aggression_detection.ipynb` 에서 진행됩니다.
 
-| 구분 | 실행 환경 | 비고 |
-|---|---|---|
-| 기능 1 학습·평가 | **Google Colab 필수** | 구글 드라이브 마운트·세션 업로드(`/content/`)·GPU 사용을 전제로 작성됨 |
-| 기능 2 학습·평가 | **Google Colab 필수** | 〃 |
-| 기능 3 통합 실행 | **Google Colab 필수** | 기능1·2 모델을 드라이브에서 로드 |
-| 기능 3 로직 단독 확인 | 로컬 Python 가능 | `python feature3/state_change_analysis.py` (GPU·드라이브·모델 불필요) |
-
-- 학습(기능 1·2)에는 **GPU 런타임 권장** (런타임 → 런타임 유형 변경 → 하드웨어 가속기: GPU)
-- 기능 1·2·3 통합 노트북은 Colab 전용 기능(`google.colab`, 드라이브 마운트)을 사용하므로 **로컬에서는 그대로 실행되지 않습니다.** 채점·재현 시 Colab에서 실행해 주세요.
-- 데이터·GPU 없이 기능 3의 분석 로직만 빠르게 보려면 위 표의 마지막 항목(로컬 단독 실행)을 사용하세요.
-
-# 실행 순서 (Run all 3번)
-
-기능 1·2·3 모델은 **모두 본인 구글 드라이브(MyDrive)** 를 통해 자동 연동됩니다.
-파일 이동·이름 변경·경로 수정·수동 복사가 전혀 필요 없습니다. (구글 드라이브 인증 클릭만 하면 됩니다.)
-
-| 순서 | 노트북 | 할 일 | 자동으로 일어나는 것 |
+| 기능 | 노트북 | 비교 후보 | 업로드할 데이터 |
 |---|---|---|---|
-| 1 | `feature1/sentiment_analysis.ipynb` | 데이터 업로드 후 **Run all** | 학습 → `MyDrive/feature1/` 에 모델 + `result.txt` + `log.txt` 자동 저장 |
-| 2 | `feature2/aggression_detection.ipynb` | 데이터 업로드 후 **Run all** | 학습 → `MyDrive/feature2/` 에 모델 + `result.txt` + `log.txt` 자동 저장 |
-| 3 | `feature3/colab_feature3_member1.ipynb` | **Run all** | 저장소 자동 clone → 기능1·2 모델 Drive에서 자동 로드 → 원문→기능1→기능2→기능3 날짜별 분석→`daily_report.json` 생성 |
+| 1 | `feature1/model_selection/model_selection_experiment.ipynb` | KLUE-RoBERTa / KcELECTRA+SVM / KcELECTRA+Bi-LSTM | 기능 1과 동일한 xlsx 2개 |
+| 2 | `feature2/model_selection/model_selection_experiment.ipynb` | TF-IDF+로지스틱회귀 / KoELECTRA-small | 기능 2와 동일한 csv |
 
-> 기능 3은 첫 셀에서 저장소를 자동 clone하고, 시작 시 기능1·2 모델 4개 파일이 Drive에 있는지 검사합니다.
-> 없으면 **어떤 파일이 부족한지 안내하고 멈춥니다.** (해당 기능 노트북을 먼저 Run all 하면 됨)
->
-> 단, 기능 1·2의 **데이터 파일**은 라이선스(로그인·재배포 제한)상 저장소에 포함하지 않으므로 **제출물과 함께 별도로 전달**하며,
-> Colab 세션(`/content/`)에 직접 업로드하는 단계만 남습니다. (원본 출처는 AIHub — 데이터 배치법·링크: 각 기능 README 2번 항목)
-
-- 각 기능 상세 실행법: [`feature1/README.md`](feature1/README.md), [`feature2/README.md`](feature2/README.md), [`feature3/README.md`](feature3/README.md) 참고
+실행하면 후보 비교표가 출력되고 `test_result.txt`가 자동 생성됩니다. (동일 분할·동일 지표로 1회 측정 — 테스트셋 누출 없음)
 
 ---
 
-# 제출 구성
+## 제출 구성
 
-교수님 제출 파일
-
-- GitHub Repository 링크
-- 최종 보고서 PDF
-- 발표 자료 PDF
-
-코드 제출 파일
-
-- 기능1 학습 코드 (+ 모델 선정 비교 실험 `feature1/model_selection/`)
-- 기능2 학습 코드 (+ 모델 선정 비교 실험 `feature2/model_selection/`)
-- 기능3 코드
-- 실행 설명서(README)
-- requirements.txt
-
-데이터셋
-
-- 공개 데이터셋 링크 제공
-- 전처리 방법 설명 포함
+- **제출 파일**: GitHub Repository 링크 · 최종 보고서 PDF · 발표 자료 PDF
+- **코드**: 기능1·2·3 코드 (+ 모델 선정 비교 실험) · 실행 설명서(본 README) · `requirements.txt`
+- **데이터셋**: 원본 출처(AIHub) 링크 + 별도 전달 + 전처리 방법(본 README·각 README)
 
 ---
 
-# 재현성 확인
+## 개발자
 
-학습 시 사용 설정
-
-- Seed = 42
-- Train / Validation / Test = 80 / 10 / 10
-- Stratified Split 사용
-
-평가 지표
-
-- Accuracy
-- Macro-F1
-- Confusion Matrix
-
----
-
-# 개발자
-
-명지대학교 AI프로그래밍 팀 프로젝트
-
-팀명 : 채온(CHAEON)
+명지대학교 AI프로그래밍 팀 프로젝트 — 팀명: 채온(CHAEON)
