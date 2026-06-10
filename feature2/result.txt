@@ -16,20 +16,20 @@
 - 선택 : load_best_model_at_end=True (Validation Macro-F1 기준 best epoch)
 
 [최종 성능] (Test 6931개, 3-class)
-- Accuracy : 0.6425
-- Macro-F1 : 0.6016
-- 비공격(0)   : precision 0.7380 / recall 0.8789 / f1 0.8024
-- 약한공격(1) : precision 0.5074 / recall 0.5123 / f1 0.5098
-- 강한공격(2) : precision 0.6127 / recall 0.4119 / f1 0.4926
-- Confusion Matrix(행=실제,열=예측) : [[2592, 319, 38], [647, 1127, 426], [273, 775, 734]]
+- Accuracy : 0.6432
+- Macro-F1 : 0.6026
+- 비공격(0)   : precision 0.7378 / recall 0.8789 / f1 0.8022
+- 약한공격(1) : precision 0.5088 / recall 0.5123 / f1 0.5105
+- 강한공격(2) : precision 0.6143 / recall 0.4147 / f1 0.4951
+- Confusion Matrix(행=실제,열=예측) : [[2592, 320, 37], [646, 1127, 427], [275, 768, 739]]  (이미지: confusion_matrix_aggression.png)
 
 [기능 3 연동용 Binary 지표] (공격 1·2 vs 비공격 0)
-- Binary Accuracy : 0.8158
+- Binary Accuracy : 0.8156
 - Binary Precision: 0.8956
-- Binary Recall   : 0.7690
-- Binary F1-Score : 0.8275
+- Binary Recall   : 0.7687
+- Binary F1-Score : 0.8273
 
 [적법성 확인]
 - 학습  : Train + Validation 만 사용 (Validation Macro-F1 기준 best epoch 채택)
 - 테스트 : 학습 종료 후 Test 로 1회만 측정 (테스트셋 누출 없음)
-- 기록 시각 : 2026-06-09 08:19:54
+- 기록 시각 : 2026-06-09 12:10:45

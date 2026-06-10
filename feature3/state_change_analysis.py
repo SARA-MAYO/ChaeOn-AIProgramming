@@ -202,7 +202,7 @@ def build_insufficient_result(
     """
     overall = {
         "warning_count": 0,
-        "state": "⚪ 판단 보류 (데이터 부족)",
+        "state": "⚪ 데이터 부족",
     }
     if today_count < MIN_MSG_COUNT:
         return {
@@ -465,7 +465,7 @@ def build_report(analysis: dict[str, Any], generated_at: str) -> dict[str, Any]:
         reason = analysis.get("reason", "")
         report["overall"] = {
             "warning_count": 0,
-            "state": "⚪ 판단 보류 (데이터 부족)",
+            "state": "⚪ 데이터 부족",
             "text_interpretation": generate_text_interpretation(None, None, False, reason=reason),
         }
         if reason == "today_insufficient":
@@ -532,7 +532,7 @@ def analyze_sender_on_date(
             "today_count": today_count,
             "baseline_count": baseline_count,
             "overall": {
-                "state": "⚪ 판단 보류 (데이터 부족)",
+                "state": "⚪ 데이터 부족",
                 "text_interpretation": generate_text_interpretation(None, None, False, reason=reason),
             },
         }

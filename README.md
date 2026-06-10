@@ -182,15 +182,12 @@ CHAEON-AIPROGRAMMING
 │   ├── README.md · result.txt
 │   └── model_selection/                 # 모델 선정 비교 실험 (두 후보)
 │
-├── feature3
-│   ├── colab_feature3_member1.ipynb     # 기능1·2 모델 → 기능3 통합 노트북
-│   ├── state_change_analysis.py         # 기능3 엔진 (지표·상태 판정·리포트)
-│   ├── preprocess_chat_log.py           # 카카오톡 CSV → 입력 JSON 변환·익명화
-│   ├── chat_log1_raw.json · chat_log2_raw.json   # 실데이터 (익명화 완료)
-│   └── README.md
-│
-└── docs
-    └── 기능3_설계결과_보고서.pdf
+└── feature3
+    ├── colab_feature3_member1.ipynb     # 기능1·2 모델 → 기능3 통합 노트북
+    ├── state_change_analysis.py         # 기능3 엔진 (지표·상태 판정·리포트)
+    ├── preprocess_chat_log.py           # 카카오톡 CSV → 입력 JSON 변환·익명화
+    ├── chat_log1_raw.json · chat_log2_raw.json   # 실데이터 (익명화 완료)
+    └── README.md
 ```
 
 - 각 기능 상세 실행법: [`feature1/README.md`](feature1/README.md) · [`feature2/README.md`](feature2/README.md) · [`feature3/README.md`](feature3/README.md)
