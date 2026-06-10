@@ -8,9 +8,10 @@
    재현성 설정·판정 기준·적법성 기록을 남깁니다.
 
 [입력 / 출력]
-- 입력 : 기능 1·2 라벨이 붙은 채팅 로그 (sample_chat_log.json 등)
+- 입력 : 기능 1·2 모델이 라벨링한 채팅 로그
+         (통합 노트북이 chat_log1_raw.json·chat_log2_raw.json 원문을 추론)
 - 출력 : daily_report.json (날짜별 × 발신자별 상태 + 자연어 해석)
-         통합 노트북은 outputs/<입력명>_<실행시각>/ 폴더에 저장
+         통합 노트북이 outputs/<입력명>_<실행시각>/ 폴더에 저장
 
 [재현성 설정]
 - Seed   : 42 (라벨 검수 미리보기 랜덤 샘플 — random.seed(42))
@@ -25,14 +26,11 @@
 - PARTICIPATION_THRESHOLD = 20%  (참여량 변화율 임계값)
 - 종합 상태 : 주의 지표 0개 🟢 / 1개 🟡 / 2개 이상 🟠
 
-[최종 결과 — 데모 입력(sample_chat_log.json, 65건) 기준]
-- 날짜별 리포트 : 7건
-- 발신자별 최신일 판정 :
-    user_A  🟢 평소와 비슷
-    user_B  🟡 평소와 조금 다름
-    user_C  🟠 평소와 꽤 다름
-    user_D  ⚪ 데이터 부족
-- 상세 실행 출력은 log.txt 참조
+[최종 결과]
+- 통합 노트북(colab_feature3_member1.ipynb)이 기능1·2 모델로 실데이터
+  (chat_log1_raw.json·chat_log2_raw.json)를 라벨링한 뒤 날짜별 × 발신자별 상태를 판정.
+- 산출물은 입력 로그별로 outputs/<입력명>_<실행시각>/ 폴더에 분리 저장.
+- 실제로 돌려 나온 결과물은 chat_log_result/ (chat_log1/ · chat_log2/) 에 보관.
 
 [적법성 확인]
 - 학습/검증/테스트 데이터셋을 사용하지 않음 (별도 학습 없음).

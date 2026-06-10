@@ -3,7 +3,7 @@
 실제 카카오톡 채팅 로그(CSV) → 기능 1·2·3 입력 JSON 변환 + 익명화 전처리기
 
 카카오톡에서 내보낸 채팅 CSV(`timestamp, sender_id, message`)를 받아
-기능 1·2 모델이 바로 추론할 수 있는 원문 입력 형식(`sample_chat_log_raw.json`)으로 변환한다.
+기능 1·2 모델이 바로 추론할 수 있는 원문 입력 형식(`chat_log1_raw.json` 등)으로 변환한다.
 
 수행하는 일:
   1. 한국식 timestamp("2025. 4. 7. 오후 4:58") → ISO 8601 KST("2025-04-07T16:58:00+09:00")
@@ -20,7 +20,7 @@
     python preprocess_chat_log.py
 
     # 입력/출력 직접 지정
-    python preprocess_chat_log.py --input ../.데이터셋/cleaned_chat_log1.csv --output sample_chat_log_raw.json
+    python preprocess_chat_log.py --input ../.데이터셋/cleaned_chat_log2.csv --output chat_log2_raw.json
 
     # placeholder도 남기고 싶을 때(참여량을 메시지 전수로 보고 싶은 경우)
     python preprocess_chat_log.py --keep-placeholders
@@ -183,8 +183,7 @@ def convert(
 def main() -> None:
     here = Path(__file__).resolve().parent
     default_input = here.parent / ".데이터셋" / "cleaned_chat_log1.csv"
-    # 데모용 sample_chat_log_raw.json 을 덮어쓰지 않도록 실데이터는 별도 파일로 출력한다.
-    # 통합 노트북에서 실데이터를 돌리려면 이 파일을 sample_chat_log_raw.json 으로 복사/이름변경하면 된다.
+    # 통합 노트북이 그대로 읽는 실데이터 입력 파일명으로 출력한다.
     default_output = here / "chat_log1_raw.json"
 
     parser = argparse.ArgumentParser(

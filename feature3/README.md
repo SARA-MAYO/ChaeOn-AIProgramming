@@ -4,7 +4,7 @@
 별도 학습이 없으며, 기능 1·2의 출력과 채팅 로그를 입력으로 받아 리포트를 생성합니다.
 
 > 환경 세팅·전체 실행 순서(기능 1→2→3)·드라이브 저장 구조·생성 파일 목록은 **루트 [`../README.md`](../README.md)** 참고.
-> 이 문서는 기능 3의 **폴더 구성 · 단독 실행 · 카카오톡 전처리 · 입력 형식** 등 고유 디테일을 담습니다.
+> 이 문서는 기능 3의 **폴더 구성 · 통합 실행 · 카카오톡 전처리 · 입력 형식** 등 고유 디테일을 담습니다.
 
 ## 분석 항목
 
@@ -26,19 +26,15 @@
 ```
 feature3/
 │  # ── 코드 ──
-├─ state_change_analysis.py        # 기능3 엔진: 지표 계산 + 상태 판정 + 리포트·log 생성 (단독 실행 entry)
+├─ state_change_analysis.py        # 기능3 엔진: 지표 계산 + 상태 판정 + 날짜별 리포트 (노트북에서 호출하는 함수 모듈)
 ├─ colab_feature3_member1.ipynb    # 기능1·2 모델 → 기능3 통합 시연 노트북
 ├─ preprocess_chat_log.py          # 카카오톡 CSV → 기능1·2 입력 JSON 변환 + 익명화 전처리기
 │  # ── 입력 데이터 ──
 ├─ chat_log1_raw.json              # 실데이터 ① 통합 노트북 기본 입력 (원문, 전처리·익명화 완료)
 ├─ chat_log2_raw.json              # 실데이터 ② cleaned_chat_log2.csv 전처리 결과 (원문)
-├─ sample_chat_log_raw.json        # 데모용 원문 text 입력 (폴백)
-├─ sample_chat_log.json            # 기능1·2 라벨이 붙은 입력 (단독 실행용)
 │  # ── 산출물 (실행 시 생성·갱신) ──
-├─ daily_report.json               # 단독 스크립트(①) 산출물 — 날짜별 × 사용자별 상태 리포트
-├─ log.txt                         # 단독 스크립트(①) 실행 로그 (재현성 증빙)
 ├─ result.txt                      # 재현성·적법성 기록 (Seed·판정 기준·학습 미사용)
-├─ outputs/                        # 통합 노트북(②) 산출물 — 실행마다 <입력명>_<실행시각>/ 폴더로 분리 (gitignore)
+├─ outputs/                        # 통합 노트북 산출물 — 실행마다 <입력명>_<실행시각>/ 폴더로 분리 (gitignore)
 ├─ chat_log_result/                # 실데이터 2개를 실제로 돌린 산출물 (chat_log1/ · chat_log2/)
 │  # ── 문서 ──
 ├─ README.md
@@ -51,25 +47,13 @@ feature3/
 
 ## 실행 방법
 
-### ① 통합 실행 (Colab — 정식 경로)
+### 통합 실행 (Colab — 정식 경로)
 
 `colab_feature3_member1.ipynb` 를 Colab에서 **Run all** → 저장소 자동 clone → 드라이브 인증 → 기능1·2 모델 자동 로드 → 원문 → 기능1 추론 → 기능2 추론 → 라벨 검수 → 기능3 날짜별 분석 → `outputs/<입력명>_<실행시각>/` 에 산출물 저장 (실행마다 새 폴더, 덮어쓰기 없음). 업로드·경로 수정 불필요.
 
-이것이 **실제 기능1·2 모델 결과로 기능3를 돌리는 정식 경로**입니다. (전체 실행 순서·전제 조건은 루트 README 참고)
+기능3은 반드시 **기능1·2 모델 추론 결과로 돌립니다.** `state_change_analysis.py` 는 노트북이 호출하는 함수 모듈이며, 단독 실행 진입점은 없습니다. (전체 실행 순서·전제 조건은 루트 README 참고)
 
-### ② 기능 3 로직 단독 점검 (개발용 — 모델 결과 아님)
-
-```bash
-cd feature3
-python state_change_analysis.py
-```
-
-- 입력: `sample_chat_log.json` (기능1·2 **라벨이 이미 박힌** 샘플 — 모델을 돌리지 않음)
-- 출력: `daily_report.json` (날짜별 × 발신자별 🟢🟡🟠⚪ 판정 + 자연어 해석) · `log.txt` (실행 로그)
-- **모델 추론 없이 기능3 판정 로직만 빠르게 확인**하는 용도입니다. 실제 모델 결과로 보려면 위 ①(Colab)을 사용하세요.
-- 파이썬 내장 라이브러리만 사용하므로 별도 설치 없이 동작합니다.
-
-> 기능 3은 별도 학습이 없어 `result.txt`에 성능 metric(Accuracy 등)은 없지만, 재현성·적법성 기록용으로 `log.txt`·`result.txt`를 둡니다.
+> 기능 3은 별도 학습이 없어 `result.txt`에 성능 metric(Accuracy 등)은 없지만, 재현성·적법성 기록용으로 `result.txt`를 둡니다.
 > (Seed=42, 판정 기준 상수, "학습/검증/테스트셋 미사용" 등. 모델 자체 성능은 기능1·2의 `result.txt` 참조.)
 
 ---
@@ -84,7 +68,7 @@ python state_change_analysis.py
 
 ## 실제 카카오톡 로그 전처리 (`preprocess_chat_log.py`)
 
-데모용 `sample_chat_log_raw.json` 외에, **실제 카카오톡 채팅 로그**를 기능1·2 입력 형식으로
+**실제 카카오톡 채팅 로그**를 기능1·2 입력 형식(`chat_log1_raw.json`·`chat_log2_raw.json`)으로
 변환·익명화하는 전처리 코드와 그 결과물을 함께 제공합니다.
 
 ### 입력 / 출력
@@ -129,7 +113,7 @@ python preprocess_chat_log.py --keep-placeholders
 기능 3은 **기능 1·2의 출력 규격**(라벨이 붙은 메시지 리스트)을 입력으로 받습니다.
 
 ```json
-// sample_chat_log.json — 기능1·2 출력 = 기능3 입력
+// 기능1·2 출력 = 기능3 입력 (라벨이 붙은 메시지 리스트)
 [
   {
     "message_id": 1,
@@ -144,7 +128,7 @@ python preprocess_chat_log.py --keep-placeholders
 통합 실행 시에는 라벨 대신 **원문 `text`** 가 든 입력을 사용하며, 기능1·2 모델이 라벨을 채웁니다.
 
 ```json
-// sample_chat_log_raw.json — 기능1·2 입력 (원문)
+// chat_log1_raw.json — 기능1·2 입력 (원문)
 [
   {
     "message_id": 1,
