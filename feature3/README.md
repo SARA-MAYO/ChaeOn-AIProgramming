@@ -42,8 +42,7 @@ feature3/
 ├─ chat_log_result/                # 실데이터 2개를 실제로 돌린 산출물 (chat_log1/ · chat_log2/)
 │  # ── 문서 ──
 ├─ README.md
-├─ requirements.txt                # 패키지 명세 (pandas / numpy / scikit-learn)
-└─ 기능3_설계결과_보고서.pdf
+└─ requirements.txt                # 패키지 명세 (pandas / numpy / scikit-learn)
 ```
 
 > 통합 노트북은 시작 시 `MyDrive/feature1/`·`MyDrive/feature2/` 의 기능1·2 모델을 검사·로드하고, 없으면 부족한 파일을 안내하고 종료합니다. (드라이브 저장 구조 상세는 루트 README)
