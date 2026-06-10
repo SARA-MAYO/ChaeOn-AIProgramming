@@ -210,7 +210,7 @@ CHAEON-AIPROGRAMMING
 
 ## 제출 구성
 
-- **제출 파일**: GitHub Repository 링크 · 최종 보고서 PDF · 발표 자료 PDF
+- **제출 파일**: GitHub Repository 링크 · 최종 보고서 PDF
 - **코드**: 기능1·2·3 코드 (+ 모델 선정 비교 실험) · 실행 설명서(본 README) · `requirements.txt`
 - **데이터셋**: 원본 출처(AIHub) 링크 + 별도 전달 + 전처리 방법(본 README·각 README)
 
@@ -219,3 +219,4 @@ CHAEON-AIPROGRAMMING
 ## 개발자
 
 명지대학교 AI프로그래밍 팀 프로젝트 — 팀명: 채온(CHAEON)
+- 팀원 : 이설하, 김도헌, 최문경
